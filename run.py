@@ -22,7 +22,13 @@ def main():
         print("you are NOT eligible to play this game")
         exit(user_name)
 
+
+
 def exit(user):
+    """
+    This function will simply raise SystemExit and
+    the reason of its exist is to avoid repeatation
+    """
     raise SystemExit(f"\nGoodbye {user}\nExit the Game.\n")
         
 
