@@ -50,7 +50,10 @@ def rules():
     This function will read the file rules.txt and
     print it in the console
     """
-    with open('rules.txt') as file:
-        print(file.read())
+    try:
+        with open('ruless.txt') as file:
+            print(file.read())
+    except FileNotFoundError:
+        print("File not found or cannot be opened.")
 
 main()
