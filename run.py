@@ -14,12 +14,15 @@ def main():
         Play_game=input("Do you want to play game (Y or N)?")
         if Play_game.lower()=='y':
             #run function to start game
-            input("This is a test to check if we are still in the game")
         else:
             #exit
-            return 0
+            raise SystemExit(f"\nExit the Game.\n")
     else:
         print("you are NOT eligible to play this game")
-        return 0
+        raise SystemExit(f"\nExit the Game\n")
+
+
+        
+
 
 main()
