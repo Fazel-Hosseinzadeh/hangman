@@ -6,6 +6,8 @@ def main():
     print("Welcome to HANGMAN game!")
     user_name=get_user_name()
     user_age=get_user_age(user_name)
+    rules()
+    
         
 
 def get_user_name():
@@ -43,6 +45,12 @@ def exit(user):
     """
     raise SystemExit(f"\nGoodbye {user}\nExit the Game.\n")
         
-
+def rules():
+    """
+    This function will read the file rules.txt and
+    print it in the console
+    """
+    with open('rules.txt') as file:
+        print(file.read())
 
 main()
