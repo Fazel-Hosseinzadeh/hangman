@@ -1,0 +1,12 @@
+
+
+1-The game selects a random word from a word list.
+2-The player's goal is to guess the word one letter at a time.
+3-The player has a limited number of guesses before the game ends.
+4- The " _ " represents unknown letters.
+5-Prompt the player to enter a letter.
+6- After inserting letter it will be checked if the letter is present in the word:
+    6-a-If the letter is in the word, reveal its positions in the displayed word.
+    6-b-If the letter is not in the word, reduce the number of remaining guesses.
+7-Repeat steps 5 and 6 until the player either guesses all the letters or runs out of guesses.
+8-Visual feedback to represent the Hangman's gallows, adding one element for each incorrect guess.

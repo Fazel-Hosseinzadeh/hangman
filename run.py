@@ -51,7 +51,7 @@ def rules():
     print it in the console
     """
     try:
-        with open('ruless.txt') as file:
+        with open('rules.txt') as file:
             print(file.read())
     except FileNotFoundError:
         print("File not found or cannot be opened.")
