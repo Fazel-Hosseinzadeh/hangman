@@ -67,7 +67,7 @@ def rules():
         with open('rules.txt') as file:
             print(file.read())
     except FileNotFoundError:
-        print("File not found or cannot be opened.")
+        print("Unable to load rules")
 
 
 def words():
@@ -79,7 +79,7 @@ def words():
         with open('words.txt') as file:
             return [line.strip() for line in file.readlines()]
     except FileNotFoundError:
-        print("'words.txt' not found or cannot be opened.")
+        print("Unable to load words list")
 
 
 def random_picker():
