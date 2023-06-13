@@ -1,3 +1,5 @@
+import random
+
 def main():
     """
     Getting user's name and age and starting (or restarting) and
@@ -7,7 +9,9 @@ def main():
     user_name=get_user_name()
     user_age=get_user_age(user_name)
     rules()
-    print(words())       
+    print(words()) 
+    print(random_picker())
+    
 
 def get_user_name():
     """
@@ -43,8 +47,8 @@ def exit(user):
     the reason of its exist is to avoid repeatation
     """
     raise SystemExit(f"\nGoodbye {user}\nExit the Game.\n")
-  
-        
+
+
 def rules():
     """
     This function will read the file rules.txt and
@@ -68,4 +72,10 @@ def words():
     except FileNotFoundError:
         print("'words.txt' not found or cannot be opened.")
 
+def random_picker():
+    """
+    This function simply will pick from the list of the 
+    words which are comming from words() function
+    """
+    return random.choice(words())
 main()
