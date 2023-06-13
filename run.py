@@ -5,12 +5,12 @@ def main():
     Getting user's name and age and starting (or restarting) and
       finishing the game 
     """
-    print("Welcome to HANGMAN game!")
+    print("\nWelcome to HANGMAN game!\n")
     user_name=get_user_name()
     user_age=get_user_age(user_name)
     rules()
-    print(words()) 
-    print(random_picker(words()))
+    print("\n", words(), "\n") 
+    print("\n", random_picker(words()),"\n")
     
 
 def get_user_name():
@@ -21,10 +21,10 @@ def get_user_name():
     while (not valid):
         user_name=input("What is your name? (Just alphabetic)")
         if user_name.isalpha():
-            print(f"Happy to have you here {user_name}!")
+            print(f"\nHappy to have you here {user_name}!\n")
             valid=True
         else:
-            print("The name which you inserted \nhas non-alphabetic characters.\nPlease try again!")
+            print("\nThe name which you inserted \nhas non-alphabetic characters.\nPlease try again!\n")
     return user_name
 
 
@@ -67,7 +67,7 @@ def rules():
         with open('rules.txt') as file:
             print(file.read())
     except FileNotFoundError:
-        print("Unable to load rules")
+        print("\nUnable to load rules\n")
 
 
 def words():
@@ -79,7 +79,7 @@ def words():
         with open('words.txt') as file:
             return [line.strip() for line in file.readlines()]
     except FileNotFoundError:
-        print("Unable to load words list")
+        print("\nUnable to load words list\n")
 
 
 def random_picker(list):
