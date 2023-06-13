@@ -17,12 +17,13 @@ def main():
             pass
         else:
             #exit
-            raise SystemExit(f"\nGoodbye {user_name}\nExit the Game.\n")
+            exit(user_name)
     else:
         print("you are NOT eligible to play this game")
-        raise SystemExit(f"\nGoodbye {user_name}\nExit the Game.\n")
+        exit(user_name)
 
-
+def exit(user):
+    raise SystemExit(f"\nGoodbye {user}\nExit the Game.\n")
         
 
 
