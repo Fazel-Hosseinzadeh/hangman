@@ -10,7 +10,7 @@ def main():
     user_age=get_user_age(user_name)
     rules()
     print(words()) 
-    print(random_picker())
+    print(random_picker(words()))
     
 
 def get_user_name():
@@ -82,12 +82,12 @@ def words():
         print("Unable to load words list")
 
 
-def random_picker():
+def random_picker(list):
     """
     This function simply will pick from the list of the 
     words which are comming from words() function
     """
-    return random.choice(words())
+    return random.choice(list)
 
 
 main()
