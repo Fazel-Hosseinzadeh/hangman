@@ -32,21 +32,30 @@ def get_user_age(user_name):
     """
     Get the age and check if all is digit and then ckech the eligibility
     """
-    user_age=int(input("Pleas let me know your age? (Just number)"))
-    if user_age>6:
+   #Check if the user_age is a number
+    while True:
+        user_age=input("Pleas let me know your age? (Just insert number)")
+        if user_age.isdigit():
+            break
+        else:
+            print("Just numbers are valid!\nPlease try again.\n")
+    
+# Check if the user_age is eligible
+    if int(user_age) > 6:
         print("you are eligible to play this game")
     else:
         print("you are NOT eligible to play this game")
-        exit(user_name)
+        exit_game(user_name)
     return user_age
 
 
-def exit(user):
+def exit_game(user):
     """
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    raise SystemExit(f"\nGoodbye {user}\nExit the Game.\n")
+    print(f"\nGoodbye {user}\nExit the Game.\n")
+    exit()
 
 
 def rules():
@@ -68,9 +77,10 @@ def words():
     """
     try:
         with open('words.txt') as file:
-            return file.readlines()
+            return [line.strip() for line in file.readlines()]
     except FileNotFoundError:
         print("'words.txt' not found or cannot be opened.")
+
 
 def random_picker():
     """
@@ -78,4 +88,6 @@ def random_picker():
     words which are comming from words() function
     """
     return random.choice(words())
+
+
 main()
