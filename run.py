@@ -5,9 +5,7 @@ def main():
     """
     print("Welcome to HANGMAN game!")
     user_name=get_user_name()
-    print(f"User name is : {user_name}")
-    user_age=get_user_age()
-    print(f"User age is : {user_age}")
+    user_age=get_user_age(user_name)
         
 
 def get_user_name():
@@ -25,11 +23,16 @@ def get_user_name():
     return user_name
 
 
-def get_user_age():
+def get_user_age(user_name):
     """
     Get the age and check if all is digit and then ckech the eligibility
     """
-    user_age=input("Pleas let me know your age? (Just number)")
+    user_age=int(input("Pleas let me know your age? (Just number)"))
+    if user_age>6:
+        print("you are eligible to play this game")
+    else:
+        print("you are NOT eligible to play this game")
+        exit(user_name)
     return user_age
 
 
