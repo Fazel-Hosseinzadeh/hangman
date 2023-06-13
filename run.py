@@ -7,8 +7,7 @@ def main():
     user_name=get_user_name()
     user_age=get_user_age(user_name)
     rules()
-    
-        
+    print(words())       
 
 def get_user_name():
     """
@@ -44,6 +43,7 @@ def exit(user):
     the reason of its exist is to avoid repeatation
     """
     raise SystemExit(f"\nGoodbye {user}\nExit the Game.\n")
+  
         
 def rules():
     """
@@ -55,5 +55,17 @@ def rules():
             print(file.read())
     except FileNotFoundError:
         print("File not found or cannot be opened.")
+
+
+def words():
+    """
+    This function will read the file words.txt and
+    return it as a list
+    """
+    try:
+        with open('words.txt') as file:
+            return file.readlines()
+    except FileNotFoundError:
+        print("'words.txt' not found or cannot be opened.")
 
 main()
