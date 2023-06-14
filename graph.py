@@ -2,7 +2,8 @@
 The hanging man graphical art is taken form :
 https://ascii.co.uk/art/hangman
 """
-hangman=[
+def hangman(step):
+    show=[
     """
     """,
     """
@@ -13,7 +14,7 @@ hangman=[
      |       
      |      
      |
- _|___
+     |___
     """,
     """
           _______
@@ -23,7 +24,7 @@ hangman=[
      |       
      |      
      |
- _|___
+     |___
     """,
     """
           _______
@@ -33,7 +34,7 @@ hangman=[
      |       
      |      
      |
- _|___
+     |___
     """,
     """
           _______
@@ -43,7 +44,7 @@ hangman=[
      |       
      |      
      |
- _|___
+     |___
     """,
     """
           _______
@@ -53,7 +54,7 @@ hangman=[
      |       |
      |      
      |
- _|___
+     |___
     """,
     """
           _______
@@ -63,7 +64,7 @@ hangman=[
      |       |
      |      / 
      |
- _|___
+     |___
     """,
     """
           _______
@@ -71,12 +72,13 @@ hangman=[
      |      (_)
      |      \|/
      |       |
-     |      / \
+     |      / \\
      |
- _|___
+     |___
     """,
-
-]
+    ]
+    print(show[step])
+    
 
 """
 The logo art is taken form :
