@@ -1,9 +1,10 @@
+
 """
 The hanging man graphical art is taken form :
 https://ascii.co.uk/art/hangman
 """
 def hangman(step):
-    show=[
+    show=(
     """
     """,
     """
@@ -76,8 +77,8 @@ def hangman(step):
      |
      |___
     """,
-    ]
-    print(show[step])
+    )
+    return show[step]
     
 
 """

@@ -7,7 +7,7 @@ def main():
     Getting user's name and age and starting (or restarting) and
       finishing the game 
     """
-    print(logo)
+    cprint (logo, "magenta")
     print("\nWelcome to HANGMAN game!\n")
     user_name=get_user_name()
     user_age=get_user_age(user_name)
