@@ -8,7 +8,7 @@ def main():
       finishing the game 
     """
     cprint (logo, "magenta")
-    print("\nWelcome to HANGMAN game!\n")
+    cprint("\n\n\nWelcome to HANGMAN game!\n\n\n\n","blue")
     user_name=get_user_name()
     user_age=get_user_age(user_name)
 
@@ -19,10 +19,10 @@ def get_user_name():
     """
     valid=False
     while (not valid):
-        user_name=input("What is your name? (Just alphabetic)")
+        user_name=input(cprint("\n\n\nWhat is your name? (Just alphabetic)\n\n\n\n" ,"white"))
         if user_name.isalpha():
             user_name=user_name.capitalize()
-            print(f"\nHappy to have you here {user_name}!\n")
+            cprint(f"\n\n\nHappy to have you here {user_name}!\n\n\n\n", "green")
             valid=True
         else:
             print("\nThe name which you inserted \nhas non-alphabetic characters.\nPlease try again!\n")
@@ -35,17 +35,17 @@ def get_user_age(user_name):
     """
    #Check if the user_age is a number
     while True:
-        user_age=input("Pleas let me know your age? (Just insert number)")
+        user_age=input(cprint("\n\n\nPleas let me know your age? (Just insert number)\n\n\n\n", "magenta"))
         if user_age.isdigit():
             break
         else:
-            print("Just numbers are valid!\nPlease try again.\n")
+            cprint("\n\n\nJust numbers are valid!\nPlease try again.\n\n\n\n", "red")
     
 # Check if the user_age is eligible
     if int(user_age) > 6:
-        print("you are eligible to play this game")
+        cprint("\n\n\nyou are eligible to play this game\n\n\n\n", "green")
     else:
-        print("you are NOT eligible to play this game")
+        cprint("\n\n\nyou are NOT eligible to play this game\n\n\n\n", "red")
         exit_game(user_name)
     return user_age
 
@@ -55,7 +55,7 @@ def exit_game(user):
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    print(f"\nGoodbye {user}\nExit the Game.\n")
+    cprint(f"\n\n\nGoodbye {user}\n\nExit the Game\n\n\n\n", "blue")
     exit()
 
 
@@ -66,9 +66,9 @@ def rules():
     """
     try:
         with open('rules.txt') as file:
-            print(file.read())
+            cprint(file.read(), "green")
     except FileNotFoundError:
-        print("\nUnable to load rules\n")
+        cprint("\n\n\nUnable to load rules\n\n\n\n", "red")
 
 
 def words():
@@ -80,7 +80,7 @@ def words():
         with open('words.txt') as file:
             return [line.strip() for line in file.readlines()]
     except FileNotFoundError:
-        print("\nUnable to load words list\n")
+        cprint("\n\n\nUnable to load words list\n\n\n\n", "red")
 
 
 def random_picker(ls):
@@ -110,5 +110,7 @@ def cprint(text, color):
         color = 'reset'  # default to reset color
 
     print(f"{colors[color]}{text}{colors['reset']}")
+    #The return is added because of using it in input
+    return ""
 
 main()
