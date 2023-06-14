@@ -82,12 +82,31 @@ def words():
         print("\nUnable to load words list\n")
 
 
-def random_picker(list):
+def random_picker(ls):
     """
     This function simply will pick from the list of the 
     words which are comming from words() function
     """
-    return random.choice(list)
+    return random.choice(ls)
 
+def cprint(text, color):
 
+    #ANSI escape codes for bakcground colors
+    colors = {
+        'black': '\033[1;40m',
+        'red': '\033[1;41m',
+        'green': '\033[1;42m',
+        'yellow': '\033[1;43m',
+        'blue': '\033[1;44m',
+        'magenta': '\033[1;45m',
+        'cyan': '\033[1;46m',
+        'white': '\033[1;47m',
+        'reset': '\033[1;0m'
+    }
+
+    if color not in colors:
+        color = 'reset'  # default to reset color
+
+    print(f"{colors[color]}{text}{colors['reset']}")
+   
 main()
