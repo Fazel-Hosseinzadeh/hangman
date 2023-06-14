@@ -1,11 +1,13 @@
 import random
 from graph import hangman
+from graph import logo
 
 def main():
     """
     Getting user's name and age and starting (or restarting) and
       finishing the game 
     """
+    print(logo)
     print("\nWelcome to HANGMAN game!\n")
     user_name=get_user_name()
     user_age=get_user_age(user_name)
@@ -108,6 +110,5 @@ def cprint(text, color):
         color = 'reset'  # default to reset color
 
     print(f"{colors[color]}{text}{colors['reset']}")
-
 
 main()
