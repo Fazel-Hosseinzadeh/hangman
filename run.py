@@ -8,10 +8,7 @@ def main():
     print("\nWelcome to HANGMAN game!\n")
     user_name=get_user_name()
     user_age=get_user_age(user_name)
-    rules()
-    print("\n", words(), "\n") 
-    print("\n", random_picker(words()),"\n")
-    
+
 
 def get_user_name():
     """
@@ -21,6 +18,7 @@ def get_user_name():
     while (not valid):
         user_name=input("What is your name? (Just alphabetic)")
         if user_name.isalpha():
+            user_name=user_name.capitalize()
             print(f"\nHappy to have you here {user_name}!\n")
             valid=True
         else:
@@ -89,6 +87,7 @@ def random_picker(ls):
     """
     return random.choice(ls)
 
+
 def cprint(text, color):
 
     #ANSI escape codes for bakcground colors
@@ -108,5 +107,6 @@ def cprint(text, color):
         color = 'reset'  # default to reset color
 
     print(f"{colors[color]}{text}{colors['reset']}")
-   
+
+
 main()
