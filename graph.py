@@ -103,3 +103,13 @@ menu_text = """
     (3) EXIT
 
     """
+play_cat = """
+
+****************** Categories ******************
+
+      (1) Contries
+      (2) Animals
+      (3) Foods
+      (4) Things
+
+"""
