@@ -112,7 +112,7 @@ def menu(user_name):
             play(user_name)
         elif choose == '3':
             while True:
-                q=input(cprint(f"\n\n Press Y to quit, or any other key to continue.\n\n", "blue"))
+                q=input(cprint(f"\n\n Press Y to quit, or any other key to continue.\n\n" "blue"))
                 if q.lower()=='y':
                     exit_game(user_name)
                 else:
@@ -131,7 +131,7 @@ def category_picker():
     
     while True:
         cprint(play_cat, "blue")
-        category = input (cprint(" Please pick one category ", "yellow"))
+        category = input (cprint(" Please pick one category\n", "yellow"))
         if not category.isdigit():
             cprint("\n please enter a number between 1 to 4\n", "red")
         elif category == '1':
