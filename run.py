@@ -1,5 +1,6 @@
 import random
 from graph import *
+from words import *
 
 def main():
     """
@@ -8,8 +9,8 @@ def main():
     """
     cprint (" "+logo, "magenta")
     cprint("\n Welcome to HANGMAN game!\n\n","green")
-    user_name=get_user_name()
-    user_age=get_user_age(user_name)
+    user_name = get_user_name()
+    user_age = get_user_age(user_name)
     menu(user_name)
 
 
@@ -17,13 +18,13 @@ def get_user_name():
     """
     Get a name from user and check if all are alphabetic
     """
-    valid=False
+    valid = False
     while (not valid):
-        user_name=input(cprint("\n What is your name? (Just alphabetic)\n\n" ,"green"))
+        user_name = input(cprint("\n What is your name? (Just alphabetic)\n\n" ,"green"))
         if user_name.isalpha():
-            user_name=user_name.capitalize()
+            user_name = user_name.capitalize()
             cprint(f"\n Happy to have you here {user_name}!\n\n", "green")
-            valid=True
+            valid = True
         else:
             cprint("\n Name contains invalid characters. Try again!\n\n", "red")
     return user_name
@@ -70,17 +71,11 @@ def rules():
     except FileNotFoundError:
         cprint("\n Unable to load rules\n\n", "red")
 
+
 def word_picker(category):
-    words=None
-    if category=='1':
-        pass
-    elif category=='2':
-        pass
-    elif category=='3':
-        pass
-    elif category=='4':
-        pass
+    words = categories[category]
     return random.choice(words)
+
 
 def cprint(text, color):
 
@@ -125,7 +120,34 @@ def menu(user_name):
         else:
             cprint("\n\n Please enter a number between 1 to 3\n\n", "red")
 
+
 def play(user_name):
     cprint(f"\n You choosed to play. Good luck {user_name}!\n", "green")
+    category = category_picker()
+
+
+def category_picker():
+    
+    while True:
+        cprint(play_cat, "green")
+        category = input (cprint("Please pick one category", "green"))
+        if not category.isdigit():
+            cprint("please enter a number between 1 to 4", "red")
+        elif category == '1':
+            cprint("Category: Contries", "blue")
+            break
+        elif category == '2':
+            cprint("Category: Animals", "blue")
+            break
+        elif category == '3':
+            cprint("Category: Foods", "blue")
+            break
+        elif category == '4':
+            cprint("Category: Things", "blue")
+            break
+        else:
+            cprint("please enter a number between 1 to 4", "red")
+    return int(category)
+
 
 main()
