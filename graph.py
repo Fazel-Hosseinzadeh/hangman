@@ -4,7 +4,7 @@ The hanging man graphical art is taken form :
 https://ascii.co.uk/art/hangman
 """
 def hangman(step):
-    show=(
+    show = (
     """
     """,
     """
@@ -86,7 +86,7 @@ The logo art is taken form :
 https://ascii.co.uk/art/hangman
 """
 
-logo="""
+logo = """
  _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -94,9 +94,9 @@ logo="""
 | | | | (_| | | | | (_| | | | | | | (_| | | | |
 |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                     __/ |                      
-                   |___/  
+                   |___/                       
     """
-menu_text="""
+menu_text = """
     ***********MENUE**********
     (1) RULES
     (2) PLAY

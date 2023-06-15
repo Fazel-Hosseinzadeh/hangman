@@ -66,7 +66,7 @@ def rules():
     """
     try:
         with open('rules.txt') as file:
-            cprint(file.read(), "green")
+            cprint(file.read(), "blue")
     except FileNotFoundError:
         cprint("\n Unable to load rules\n\n", "red")
 
@@ -115,18 +115,24 @@ def cprint(text, color):
 
 
 def menu(user_name):
-    cprint(menu_text, "cyan")
     while True:
-        choose=input(cprint("\n Please choose from the menue:\n\n", "green"))
+        cprint(menu_text, "cyan")
+        choose =input(cprint("\n Please choose from the menue:\n\n", "green"))
         if not choose.isdigit():
             cprint("\n\n Please enter a number between 1 to 3\n\n", "red")
-        elif  choose == '1':
+        elif choose == '1':
             rules()
-            cprint(menu_text, "cyan")
         elif choose == '2':
             pass
         elif choose == '3':
-            exit_game(user_name)
+            while True:
+                q=input(cprint(f"\n\n Press Y to quit, or any other key to continue.\n\n", "white"))
+                if q.lower()=='y':
+                    exit_game(user_name)
+                else:
+                    break
+        else:
+            cprint("\n\n Please enter a number between 1 to 3\n\n", "red")
 
         
 main()
