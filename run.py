@@ -8,7 +8,7 @@ def main():
       finishing the game 
     """
     cprint (" "+logo, "magenta")
-    cprint("\n Welcome to HANGMAN game!\n\n","green")
+    cprint("\n Welcome to HANGMAN game!\n\n","blue")
     user_name = get_user_name()
     user_age = get_user_age(user_name)
     menu(user_name)
@@ -20,10 +20,10 @@ def get_user_name():
     """
     valid = False
     while (not valid):
-        user_name = input(cprint("\n What is your name? (Just alphabetic)\n\n" ,"green"))
+        user_name = input(cprint("\n What is your name? (Just alphabetic)\n\n" ,"yellow"))
         if user_name.isalpha():
             user_name = user_name.capitalize()
-            cprint(f"\n Happy to have you here {user_name}!\n\n", "green")
+            cprint(f"\n Happy to have you here {user_name}!\n\n", "yellow")
             valid = True
         else:
             cprint("\n Name contains invalid characters. Try again!\n\n", "red")
@@ -36,7 +36,7 @@ def get_user_age(user_name):
     """
    #Check if the user_age is a number
     while True:
-        user_age=input(cprint(f"\n How old are you {user_name}? (Just insert number)\n\n", "green"))
+        user_age=input(cprint(f"\n How old are you {user_name}? (Just insert number)\n\n", "yellow"))
         if user_age.isdigit():
             break
         else:
@@ -44,7 +44,7 @@ def get_user_age(user_name):
     
 # Check if the user_age is eligible
     if int(user_age) > 6:
-        cprint("\n you are eligible to play this game\n\n", "green")
+        cprint("\n you are eligible to play this game\n\n", "blue")
     else:
         cprint("\n you are NOT eligible to play this game\n\n", "red")
         exit_game(user_name)
@@ -84,7 +84,7 @@ def cprint(text, color):
         'black': '\033[1;40m',
         'red': '\033[1;41m',
         'green': '\033[1;42m',
-        'yellow': '\033[1;43m',
+        'yellow': '\033[1;33m',
         'blue': '\033[1;44m',
         'magenta': '\033[1;45m',
         'cyan': '\033[1;46m',
@@ -103,7 +103,7 @@ def cprint(text, color):
 def menu(user_name):
     while True:
         cprint(menu_text, "cyan")
-        choose =input(cprint("\n Please choose from the menue:\n\n", "green"))
+        choose =input(cprint("\n Please choose from the menue:\n\n", "yellow"))
         if not choose.isdigit():
             cprint("\n\n Please enter a number between 1 to 3\n\n", "red")
         elif choose == '1':
@@ -122,7 +122,7 @@ def menu(user_name):
 
 
 def play(user_name):
-    cprint(f"\n You choosed to play. Good luck {user_name}!\n", "green")
+    cprint(f"\n You choosed to play. Good luck {user_name}!\n", "yellow")
     category = category_picker()
     random_word = word_picker(category)
     
@@ -130,8 +130,8 @@ def play(user_name):
 def category_picker():
     
     while True:
-        cprint(play_cat, "green")
-        category = input (cprint(" Please pick one category ", "green"))
+        cprint(play_cat, "blue")
+        category = input (cprint(" Please pick one category ", "yellow"))
         if not category.isdigit():
             cprint("\n please enter a number between 1 to 4\n", "red")
         elif category == '1':
