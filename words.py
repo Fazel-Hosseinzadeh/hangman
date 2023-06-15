@@ -1,0 +1,80 @@
+categories=[
+    # due index start from 1
+    (),
+    # Contries
+    (
+    'Belgium'
+    'Bolivia'
+    'Burundi'
+    'Croatia'
+    'Ecuador'
+    'Germany'
+    'Grenada'
+    'Hungary'
+    'Ireland'
+    'Jamaica'
+    'Lebanon'
+    'Moldova'
+    'Namibia'
+    'Nigeria'
+    'Romania'
+    ),
+    # Animals
+    (
+    'Dolphin'
+    'Octopus'
+    'Platypus'
+    'Seahawk'
+    'Cheetah'
+    'Mustang'
+    'Walrus'
+    'Penguin'
+    'Ocelot'
+    'Warthog'
+    'Flamingo'
+    'Pheasant'
+    'Termite'
+    'Parakeet'
+    'Stingray'
+    'Mallard'
+    'Bullfrog'
+    'Woodpecker'
+    'Mosquito'
+    'Chinchilla'
+    ),
+    # Foods
+    (
+    'Pancake'
+    'Risotto'
+    'Dumplings'
+    'Gnocchi'
+    'Couscous'
+    'Barbecue'
+    'Calzone'
+    'Sausage'
+    'Burrito'
+    'Omelette'
+    'Ravioli'
+    'Falafel'
+    'Empanada'
+    'Cannoli'
+    ),
+    # Things
+    (
+    'Bicycle'
+    'Blanket'
+    'Diamond'
+    'Lantern'
+    'Monitor'
+    'Slipper'
+    'Whistle'
+    'Handbag'
+    'Balloon'
+    'Scissors'
+    'Keyboard'
+    'Compass'
+    'Trousers'
+    'Briefcase'
+    'Necklace'
+    )
+]
