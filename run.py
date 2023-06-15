@@ -131,7 +131,7 @@ def category_picker():
     
     while True:
         cprint(play_cat, "green")
-        category = input (cprint(" Please pick one category 4 ", "green"))
+        category = input (cprint(" Please pick one category ", "green"))
         if not category.isdigit():
             cprint("\n please enter a number between 1 to 4\n", "red")
         elif category == '1':
