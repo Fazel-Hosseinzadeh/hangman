@@ -1,6 +1,5 @@
 import random
-from graph import hangman
-from graph import logo
+from graph import *
 
 def main():
     """
@@ -11,6 +10,7 @@ def main():
     cprint("\n Welcome to HANGMAN game!\n\n","green")
     user_name=get_user_name()
     user_age=get_user_age(user_name)
+    menu(user_name)
 
 
 def get_user_name():
@@ -35,7 +35,7 @@ def get_user_age(user_name):
     """
    #Check if the user_age is a number
     while True:
-        user_age=input(cprint("\n Pleas let me know your age? (Just insert number)\n\n", "green"))
+        user_age=input(cprint(f"\n Pleas let me know your age {user_name}? (Just insert number)\n\n", "green"))
         if user_age.isdigit():
             break
         else:
@@ -55,7 +55,7 @@ def exit_game(user):
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    cprint(f"\n Goodbye {user}\nExit the Game\n\n", "blue")
+    cprint(f"\n Goodbye {user}! We hope you enjoyed your time with us.\n Exiting Hangman...\n\n", "blue")
     exit()
 
 
@@ -113,4 +113,20 @@ def cprint(text, color):
     #The return is added because of using it in input
     return ""
 
+
+def menu(user_name):
+    cprint(menu_text, "cyan")
+    while True:
+        choose=input(cprint("\n Please choose from the menue:\n\n", "green"))
+        if not choose.isdigit():
+            cprint("\n\n Please enter a number between 1 to 3\n\n", "red")
+        elif  choose == '1':
+            rules()
+            cprint(menu_text, "cyan")
+        elif choose == '2':
+            pass
+        elif choose == '3':
+            exit_game(user_name)
+
+        
 main()
