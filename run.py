@@ -70,26 +70,17 @@ def rules():
     except FileNotFoundError:
         cprint("\n Unable to load rules\n\n", "red")
 
-
-def words():
-    """
-    This function will read the file words.txt and
-    return it as a list
-    """
-    try:
-        with open('words.txt') as file:
-            return [line.strip() for line in file.readlines()]
-    except FileNotFoundError:
-        cprint("\n Unable to load words list\n\n", "red")
-
-
-def random_picker(ls):
-    """
-    This function simply will pick from the list of the 
-    words which are comming from words() function
-    """
-    return random.choice(ls)
-
+def word_picker(category):
+    words=None
+    if category=='1':
+        pass
+    elif category=='2':
+        pass
+    elif category=='3':
+        pass
+    elif category=='4':
+        pass
+    return random.choice(words)
 
 def cprint(text, color):
 
@@ -136,6 +127,5 @@ def menu(user_name):
 
 def play(user_name):
     cprint(f"\n You choosed to play. Good luck {user_name}!\n", "green")
-    
 
 main()
