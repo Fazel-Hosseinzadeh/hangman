@@ -35,7 +35,7 @@ def get_user_age(user_name):
     """
    #Check if the user_age is a number
     while True:
-        user_age=input(cprint(f"\n Pleas let me know your age {user_name}? (Just insert number)\n\n", "green"))
+        user_age=input(cprint(f"\n How old are you {user_name}? (Just insert number)\n\n", "green"))
         if user_age.isdigit():
             break
         else:
@@ -123,10 +123,10 @@ def menu(user_name):
         elif choose == '1':
             rules()
         elif choose == '2':
-            pass
+            play(user_name)
         elif choose == '3':
             while True:
-                q=input(cprint(f"\n\n Press Y to quit, or any other key to continue.\n\n", "white"))
+                q=input(cprint(f"\n\n Press Y to quit, or any other key to continue.\n\n", "blue"))
                 if q.lower()=='y':
                     exit_game(user_name)
                 else:
@@ -134,5 +134,8 @@ def menu(user_name):
         else:
             cprint("\n\n Please enter a number between 1 to 3\n\n", "red")
 
-        
+def play(user_name):
+    cprint(f"\n You choosed to play. Good luck {user_name}!\n", "green")
+    
+
 main()
