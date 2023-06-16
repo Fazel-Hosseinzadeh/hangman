@@ -174,6 +174,10 @@ def guess(random_word):
         cprint( hangman(stage), "blue")
 
         if stage > 6 :
+            cprint(f"You lost! The word is {random_word}", "red")
+            break
+        if "-" not in guessed_word:
+            cprint(f"You won! The word is {random_word}", "green")
             break
 
         input_letter= input(cprint("Please insert a letter", "yellow"))
