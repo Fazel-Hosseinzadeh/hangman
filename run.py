@@ -112,7 +112,7 @@ def menu(user_name):
             play(user_name)
         elif choose == '3':
             while True:
-                q=input(cprint(f"\n\n Press Y to quit, or any other key to continue.\n\n" "blue"))
+                q=input(cprint(f"\n\n Press Y to quit, or any other key to continue.\n\n","blue"))
                 if q.lower()=='y':
                     exit_game(user_name)
                 else:
@@ -125,7 +125,8 @@ def play(user_name):
     cprint(f"\n You choosed to play. Good luck {user_name}!\n", "yellow")
     category = category_picker()
     random_word = word_picker(category)
-    
+    guess(random_word)
+        
 
 def category_picker():
     
@@ -150,5 +151,56 @@ def category_picker():
             cprint("\n please enter a number between 1 to 4\n", "red")
     return int(category)
 
+
+def guess(random_word):
+    stage=int(0)
+    # To avoid duplicate letters using set
+    used_letters=set()
+    random_word_letters = list()
+    guessed_word=["-"]* len(random_word)
+    
+    # Unpacking the random_word in letter
+    for letter in random_word:
+        random_word_letters.append(letter)
+    
+    # Get a letter from user
+    while True:
+        cprint( f"used_letters: {used_letters}", "yellow")
+        cprint(random_word_letters, "yellow")
+        cprint(guessed_word, "yellow")
+        cprint(hangman(stage), "blue")
+        cprint(stage , "blue")
+
+        input_letter= input(cprint("Please insert a letter", "yellow"))
+
+        # check if more than one character inserted
+        if len(input_letter)>1:
+            cprint("Just one letter per time. Try again!", "red")
+        else:
+            # check if character is alphabatic or not
+            if not input_letter.isalpha():
+                cprint("Just letters are valid. Try again!", "red")
+            else:
+                # In this point the input_letter is 
+                # alphabetic and just one character
+                if input_letter in used_letters:
+                    cprint(f"{input_letter} is alredy used", "blue")
+                # If the letter is in the random_word
+                elif input_letter in random_word_letters:
+                    cprint(f"{input_letter} is in the word", "blue")
+                    used_letters.add(input_letter)
+                    # Updating the guessed_word
+                    for i in range(len(random_word_letters)):
+                        if random_word_letters[i]==input_letter:
+                            guessed_word[i]=input_letter
+                            
+                # If the letter is NOT in the random_word
+                elif input_letter not in random_word_letters:
+                    cprint(f"{input_letter} is NOT in the word", "cyan")
+                    used_letters.add(input_letter)
+                    stage += 1
+                    if stage > 6 :
+                        break
+                
 
 main()
