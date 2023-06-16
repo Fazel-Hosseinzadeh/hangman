@@ -159,17 +159,19 @@ def guess(random_word):
     random_word_letters = list()
     guessed_word=["-"]* len(random_word)
     
-    # Unpacking the random_word in letter
+    # Unpacking the random_word in random_word_letters
     for letter in random_word:
-        random_word_letters.append(letter)
+        # With .lower() we are sure all letters are lowercase
+        random_word_letters.append(letter.lower())
     
     # Get a letter from user
     while True:
+        # showing the UI 
         cprint( f"used_letters: {used_letters}", "yellow")
         cprint(random_word_letters, "yellow")
         cprint(guessed_word, "yellow")
-        cprint(hangman(stage), "blue")
         cprint(stage , "blue")
+        cprint( hangman(stage), "blue")
 
         input_letter= input(cprint("Please insert a letter", "yellow"))
 
@@ -181,11 +183,14 @@ def guess(random_word):
             if not input_letter.isalpha():
                 cprint("Just letters are valid. Try again!", "red")
             else:
-                # In this point the input_letter is 
-                # alphabetic and just one character
+                """
+                We are sure input_letter is letter,so we can use .lower() 
+                method to convert it to lowercase
+                """
+                input_letter=input_letter.lower()
                 if input_letter in used_letters:
                     cprint(f"{input_letter} is alredy used", "blue")
-                # If the letter is in the random_word
+                # If the letter is in the random_word_letters 
                 elif input_letter in random_word_letters:
                     cprint(f"{input_letter} is in the word", "blue")
                     used_letters.add(input_letter)
