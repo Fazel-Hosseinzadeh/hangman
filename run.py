@@ -173,6 +173,9 @@ def guess(random_word):
         cprint(stage , "blue")
         cprint( hangman(stage), "blue")
 
+        if stage > 6 :
+            break
+
         input_letter= input(cprint("Please insert a letter", "yellow"))
 
         # check if more than one character inserted
@@ -204,8 +207,6 @@ def guess(random_word):
                     cprint(f"{input_letter} is NOT in the word", "cyan")
                     used_letters.add(input_letter)
                     stage += 1
-                    if stage > 6 :
-                        break
                 
 
 main()
