@@ -7,7 +7,7 @@ import os
 
 # Constant variable for typing()
 FAST=0.001
-SLOW=0.003
+SLOW=0.008
 SUPPERSLOW=0.5
 
 def main():
@@ -29,6 +29,11 @@ def get_user_name():
     valid = False
     while (not valid):
         user_name = input(typing("What is your name? (Just alphabetic characters)" ,"yellow", False, SLOW))
+       
+       # Refreshing screen after gettin input
+        clr()
+        cprint (logo, "magenta")
+
         if user_name.isalpha():
             user_name = user_name.capitalize()
             typing(f"Happy to have you here ", "yellow", True, SLOW)
@@ -48,6 +53,11 @@ def get_user_age(user_name):
    #Check if the user_age is a number
     while True:
         user_age=input(typing(f"How old are you {user_name}? (Just insert number)", "yellow", False, SLOW))
+       
+        # Refreshing screen after gettin input
+        clr()
+        cprint (logo, "magenta")
+       
         if user_age.isdigit():
             break
         else:
