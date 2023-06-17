@@ -139,7 +139,7 @@ def category_picker():
         cprint(play_cat, "blue")
         category = input (cprint("Please pick one category", "yellow"))
         if not category.isdigit():
-            str_category="please enter a number between 1 to 4"
+            cprint("please enter a number between 1 to 4", "red")
         elif category == '1':
             str_category="Contries"
             break
