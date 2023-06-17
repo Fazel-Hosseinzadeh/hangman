@@ -77,7 +77,7 @@ def word_picker(category):
     return random.choice(words)
 
 
-def cprint(text, color):
+def cprint(text, color,inline=False):
 
     #ANSI escape codes for bakcground colors
     colors = {
@@ -95,9 +95,13 @@ def cprint(text, color):
     if color not in colors:
         color = 'reset'  # default to reset color
 
-    print(f"{colors[color]}\n  {text}  \n\n{colors['reset']}")
-    #The return is added because of using it in input
-    return ""
+    if inline==True:
+        # end= " " will add space in the end instead of end line
+        print(f"{colors[color]} {text} {colors['reset']}", end=" ")
+    else:
+        print(f"{colors[color]}\n\n  {text}  \n\n{colors['reset']}")
+        #The return is added because of using it in input
+        return ""
 
 
 def menu(user_name):
@@ -216,6 +220,5 @@ def list_to_str(li):
     for l in li:
         str +=  " " + l + " "
     return str.upper() 
-
 
 main()
