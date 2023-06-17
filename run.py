@@ -26,7 +26,7 @@ def get_user_name():
         if user_name.isalpha():
             user_name = user_name.capitalize()
             typing(f"Happy to have you here ", "yellow", True, 0.03)
-            typing(f"{user_name}!", "blue", True, 0.03)
+            typing(f"{user_name}!", "cyan", True, 0.03)
             # End of the line for inline elements
             print("\n")
             valid = True
@@ -41,17 +41,17 @@ def get_user_age(user_name):
     """
    #Check if the user_age is a number
     while True:
-        user_age=input(cprint(f"How old are you {user_name}? (Just insert number)", "yellow"))
+        user_age=input(typing(f"How old are you {user_name}? (Just insert number)", "yellow", False, 0.03))
         if user_age.isdigit():
             break
         else:
-            cprint("Just numbers are valid! Try again.", "red")
+            typing("Just numbers are valid! Try again.", "red",False, 0.001)
     
 # Check if the user_age is eligible
     if int(user_age) > 6:
-        cprint("you are eligible to play this game", "blue")
+        typing("you are eligible to play this game", "blue",False, 0.03)
     else:
-        cprint("you are NOT eligible to play this game", "red")
+        typing("you are NOT eligible to play this game", "red",False, 0.03)
         exit_game(user_name)
     return user_age
 
