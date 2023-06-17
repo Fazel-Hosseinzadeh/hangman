@@ -65,7 +65,7 @@ def exit_game(user):
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    typing(f" Goodbye {user}!\n We hope you enjoyed your time here.\n Exiting Hangman...", "blue",False, SLOW)
+    typing(f" Goodbye {user}!\n We hope you enjoyed your time here.\n Exiting Hangman...", "blue",False, FAST)
     exit()
 
 
@@ -115,22 +115,24 @@ def cprint(text, color):
 def menu(user_name):
     while True:
         cprint(menu_text, "cyan")
-        choose =input(cprint("Please choose from the menue:", "yellow"))
+        # Giving space to input
+        print("\n")
+        choose =input(typing("Please choose from the menue:", "yellow", False, SLOW))
         if not choose.isdigit():
-            cprint("Please enter a number between 1 to 3", "red")
+            typing("Please enter a number between 1 to 3", "red" ,False, FAST)
         elif choose == '1':
             rules()
         elif choose == '2':
             play(user_name)
         elif choose == '3':
             while True:
-                q=input(cprint(f"Press Y to quit, or any other key to continue.","blue"))
+                q=input(typing(f"Press Y to exit, or any other key to continue.","blue",False, FAST))
                 if q.lower()=='y':
                     exit_game(user_name)
                 else:
                     break
         else:
-            cprint("Please enter a number between 1 to 3", "red")
+            typing("Please enter a number between 1 to 3", "red",False, FAST)
 
 
 def play(user_name):
