@@ -4,13 +4,17 @@ from words import *
 import sys
 import time
 
+# Constant variable for typing()
+FAST=0.001
+SLOW=0.03
+
 def main():
     """
     Getting user's name and age and starting (or restarting) and
       finishing the game 
     """
     cprint (logo, "magenta")
-    typing("Welcome to HANGMAN game!","blue",False,0.03)
+    typing("Welcome to HANGMAN game!","blue",False,SLOW)
     user_name = get_user_name()
     user_age = get_user_age(user_name)
     menu(user_name)
@@ -22,16 +26,16 @@ def get_user_name():
     """
     valid = False
     while (not valid):
-        user_name = input(typing("What is your name? (Just alphabetic characters)" ,"yellow", False, 0.03))
+        user_name = input(typing("What is your name? (Just alphabetic characters)" ,"yellow", False, SLOW))
         if user_name.isalpha():
             user_name = user_name.capitalize()
-            typing(f"Happy to have you here ", "yellow", True, 0.03)
-            typing(f"{user_name}!", "cyan", True, 0.03)
+            typing(f"Happy to have you here ", "yellow", True, SLOW)
+            typing(f"{user_name}!", "cyan", True, SLOW)
             # End of the line for inline elements
             print("\n")
             valid = True
         else:
-            typing("Name contains invalid characters. Try again!", "red", False, 0.001)
+            typing("Name contains invalid characters. Try again!", "red", False, FAST)
     return user_name
 
 
@@ -41,17 +45,17 @@ def get_user_age(user_name):
     """
    #Check if the user_age is a number
     while True:
-        user_age=input(typing(f"How old are you {user_name}? (Just insert number)", "yellow", False, 0.03))
+        user_age=input(typing(f"How old are you {user_name}? (Just insert number)", "yellow", False, SLOW))
         if user_age.isdigit():
             break
         else:
-            typing("Just numbers are valid! Try again.", "red",False, 0.001)
+            typing("Just numbers are valid! Try again.", "red",False, FAST)
     
 # Check if the user_age is eligible
     if int(user_age) > 6:
-        typing("you are eligible to play this game", "blue",False, 0.03)
+        typing("you are eligible to play this game", "blue",False, SLOW)
     else:
-        typing("you are NOT eligible to play this game", "red",False, 0.001)
+        typing("you are NOT eligible to play this game", "red",False, FAST)
         exit_game(user_name)
     return user_age
 
@@ -61,7 +65,7 @@ def exit_game(user):
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    typing(f" Goodbye {user}!\n We hope you enjoyed your time here.\n Exiting Hangman...", "blue",False, 0.03)
+    typing(f" Goodbye {user}!\n We hope you enjoyed your time here.\n Exiting Hangman...", "blue",False, SLOW)
     exit()
 
 
@@ -73,8 +77,10 @@ def rules():
     try:
         with open('rules.txt') as file:
             cprint(file.read(), "blue")
+            # Spacing from menu
+            print("\n")
     except FileNotFoundError:
-        typing("Unable to load rules", "red", True, 0)
+        typing("Unable to load rules", "red", False, FAST)
 
 
 def word_picker(category):
