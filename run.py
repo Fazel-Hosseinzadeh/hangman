@@ -242,10 +242,10 @@ def guess(random_word, category):
 
 
 def list_to_str(li):
-    str=""
+    st=""
     for l in li:
-        str +=  " " + l + " "
-    return str.upper() 
+        st +=  " " + l + " "
+    return st.upper() 
 
 
 def typing(str,color,inline=False,speed=0):
@@ -261,7 +261,6 @@ def typing(str,color,inline=False,speed=0):
         print("\n")
     # For avoid to print None when it is used for input method
     return ""
-
 
 
 main()
