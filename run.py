@@ -183,10 +183,8 @@ def guess(random_word, category):
     while True:
         #  User Interface in the game
 
-        #cprint( f"  ", "black")
-        #cprint(f"Try: {stage} of 7" , "blue")
-        #print("\n")
-
+        cprint( f"Used letters: {category}", "blue")
+        print("\n")
         cprint( f"Used letters: {list_to_str(used_letters)}", "blue")
         print("\n")
         cprint(list_to_str(guessed_word), "yellow")
