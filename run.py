@@ -6,16 +6,16 @@ import time
 
 # Constant variable for typing()
 FAST=0.005
-SLOW=0.05
+SLOW=0.01
 SUPPERSLOW=0.8
 
 def main():
     """
     Getting user's name and age and starting (or restarting) and
-      finishing the game 
+      finishing the game
     """
     cprint (logo, "magenta")
-    typing("Welcome to HANGMAN game!","blue",False,SLOW)
+    typing("Welcome to HANGMAN game!","blue", False, SLOW)
     user_name = get_user_name()
     user_age = get_user_age(user_name)
     menu(user_name)
@@ -140,7 +140,7 @@ def menu(user_name):
 
 
 def play(user_name):
-    typing(f"You choosed to play. Good luck {user_name}!", "yellow", False, FAST)
+    typing(f"You choosed to play. Good luck {user_name}!", "yellow", False, SLOW)
     category, str_category = category_picker()
     random_word = word_picker(category)
     guess(random_word,str_category)
