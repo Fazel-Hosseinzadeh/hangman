@@ -1,6 +1,8 @@
 import random
 from graph import *
 from words import *
+import sys
+import time
 
 def main():
     """
@@ -96,8 +98,8 @@ def cprint(text, color,inline=False):
         color = 'reset'  # default to reset color
 
     if inline==True:
-        # end= " " will add space in the end instead of end line
-        print(f"{colors[color]} {text} {colors['reset']}", end=" ")
+        # end= "" will add nothing in the end, instead of endline
+        print(f"{colors[color]}{text}{colors['reset']}", end="")
     else:
         print(f"{colors[color]}\n\n  {text}  \n\n{colors['reset']}")
         #The return is added because of using it in input
@@ -232,5 +234,12 @@ def list_to_str(li):
     for l in li:
         str +=  " " + l + " "
     return str.upper() 
+
+
+def typing(str,color,speed):
+    words = str
+    for char in words:
+        time.sleep(speed)
+        cprint(char,color,True)
 
 main()
