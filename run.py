@@ -154,8 +154,7 @@ def category_picker():
 
 def guess(random_word):
     stage=int(0)
-    # To avoid duplicate letters using set
-    used_letters=set()
+    used_letters=list()
     random_word_letters = list()
     guessed_word=["-"]* len(random_word)
     
@@ -167,7 +166,7 @@ def guess(random_word):
     # Get a letter from user
     while True:
         #  User Interface in the game
-        cprint( f"used_letters: {used_letters}\n", "blue") 
+        cprint( f"used_letters: {list_to_str(used_letters)}\n", "blue") 
         cprint(list_to_str(guessed_word), "yellow")
         cprint(f"Try: {stage} of 7\n" , "blue")
         cprint( hangman(stage), "blue")
@@ -199,7 +198,7 @@ def guess(random_word):
                 # If the letter is in the random_word_letters 
                 elif input_letter in random_word_letters:
                     cprint(f"{input_letter} is in the word", "blue")
-                    used_letters.add(input_letter)
+                    used_letters.append(input_letter)
                     # Updating the guessed_word
                     for i in range(len(random_word_letters)):
                         if random_word_letters[i]==input_letter:
@@ -208,7 +207,7 @@ def guess(random_word):
                 # If the letter is NOT in the random_word
                 elif input_letter not in random_word_letters:
                     cprint(f"{input_letter} is NOT in the word", "cyan")
-                    used_letters.add(input_letter)
+                    used_letters.append(input_letter)
                     stage += 1
 
 
