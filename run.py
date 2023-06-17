@@ -5,9 +5,9 @@ import sys
 import time
 
 # Constant variable for typing()
-FAST=0.001
-SLOW=0.008
-SUPPERSLOW=0.5
+FAST=0.005
+SLOW=0.01
+SUPPERSLOW=0.8
 
 def main():
     """
@@ -186,7 +186,7 @@ def guess(random_word, category):
     while True:
         #  User Interface in the game
 
-        cprint( f"Used letters: {category}", "blue")
+        cprint( f"Category: {category}", "blue")
         print("\n")
         cprint( f"Used letters: {list_to_str(used_letters)}", "blue")
         print("\n")
