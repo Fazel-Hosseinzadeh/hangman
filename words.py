@@ -1,7 +1,7 @@
 categories=[
     # due index start from 1
     (),
-    # Contries
+    # Countries
     (
     'Belgium',
     'Bolivia',
@@ -59,7 +59,7 @@ categories=[
     'Empanada',
     'Cannoli',
     ),
-    # Things
+    # Objects
     (
     'Bicycle',
     'Blanket',
