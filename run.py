@@ -6,7 +6,7 @@ import time
 
 # Constant variable for typing()
 FAST=0.005
-SLOW=0.01
+SLOW=0.05
 SUPPERSLOW=0.8
 
 def main():
@@ -189,15 +189,10 @@ def guess(random_word, category):
         cprint( f"Category: {category}", "blue")
         print("\n")
         cprint( f"Used letters: {list_to_str(used_letters)}", "blue")
-        print("\n")
-        cprint(list_to_str(guessed_word), "yellow")
-        print("\n")
+        typing(list_to_str(guessed_word), "yellow", False, 0)
 
         cprint( hangman(stage), "magenta")
-        # Giving space to next block
-        print("\n")
-
-
+        
         if stage > 6 :
             typing(f"You lost! The word is ", "red", True, SLOW)
             # Special speed for showing the random_word
@@ -210,7 +205,7 @@ def guess(random_word, category):
             print("\n")
             break
 
-        input_letter= input(typing("Please insert a letter", "yellow", False, FAST))
+        input_letter= input(typing("Please insert a letter\n", "yellow", True, FAST))
 
         # check if more than one character inserted
         if len(input_letter)>1:
