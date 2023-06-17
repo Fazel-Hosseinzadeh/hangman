@@ -266,7 +266,7 @@ def typing(str,color,inline=False,speed=0):
     return ""
 
 
-def cls():
+def clr():
     os.system('cls')
 
 
