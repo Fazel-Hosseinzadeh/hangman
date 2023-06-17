@@ -122,7 +122,7 @@ logo = """
 """
       
 menu_text = """
-    ***********MENUE**********
+    *********** MENU **********
     (1) RULES
     (2) PLAY
     (3) EXIT
@@ -132,9 +132,9 @@ play_cat = """
 
 ****************** Categories ******************
 
-      (1) Contries
+      (1) Countries
       (2) Animals
       (3) Foods
-      (4) Things
+      (4) Objects
 
 """
