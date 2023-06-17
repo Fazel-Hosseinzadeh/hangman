@@ -51,7 +51,7 @@ def get_user_age(user_name):
     if int(user_age) > 6:
         typing("you are eligible to play this game", "blue",False, 0.03)
     else:
-        typing("you are NOT eligible to play this game", "red",False, 0.03)
+        typing("you are NOT eligible to play this game", "red",False, 0.001)
         exit_game(user_name)
     return user_age
 
@@ -61,7 +61,7 @@ def exit_game(user):
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    cprint(f"Goodbye {user}! We hope you enjoyed your time with us.\n Exiting Hangman...", "blue")
+    typing(f" Goodbye {user}!\n We hope you enjoyed your time here.\n Exiting Hangman...", "blue",False, 0.03)
     exit()
 
 
