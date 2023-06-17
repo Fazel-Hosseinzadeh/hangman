@@ -10,7 +10,7 @@ def main():
       finishing the game 
     """
     cprint (logo, "magenta")
-    cprint("Welcome to HANGMAN game!","blue")
+    typing("Welcome to HANGMAN game!","blue",False,0.03)
     user_name = get_user_name()
     user_age = get_user_age(user_name)
     menu(user_name)
