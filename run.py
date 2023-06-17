@@ -179,18 +179,19 @@ def guess(random_word, category):
         cprint(f"Try: {stage} of 7" , "blue", True)
         print("\n")
 
-        
-        cprint(list_to_str(guessed_word), "yellow", True)
-        cprint( f"Used letters: {list_to_str(used_letters)}", "blue", True) 
+        cprint( f"Used letters: {list_to_str(used_letters)}", "blue", True)
         print("\n")
+        cprint(list_to_str(guessed_word), "yellow") 
 
         if stage > 6 :
             cprint(f"You lost! The word is ", "red", True)
             cprint(f"{random_word.capitalize()}", "green", True)
+            print("\n")
             break
         if "-" not in guessed_word:
             cprint(f"You won! The word is ", "green", True)
             cprint(f"{random_word.capitalize()}", "blue", True)
+            print("\n")
             break
 
         input_letter= input(cprint("Please insert a letter", "yellow"))
@@ -209,10 +210,10 @@ def guess(random_word, category):
                 """
                 input_letter=input_letter.lower()
                 if input_letter in used_letters:
-                    cprint(f"{input_letter} is alredy used", "blue")
+                    cprint(f"{input_letter} is alredy used", "red")
                 # If the letter is in the random_word_letters 
                 elif input_letter in random_word_letters:
-                    cprint(f"{input_letter} is in the word", "blue")
+                    cprint(f"{input_letter} is in the word", "magenta")
                     used_letters.append(input_letter)
                     # Updating the guessed_word
                     for i in range(len(random_word_letters)):
