@@ -3,10 +3,11 @@ from graph import *
 from words import *
 import sys
 import time
+import os
 
 # Constant variable for typing()
 FAST=0.001
-SLOW=0.005
+SLOW=0.003
 SUPPERSLOW=0.5
 
 def main():
@@ -263,6 +264,10 @@ def typing(str,color,inline=False,speed=0):
         print("\n")
     # For avoid to print None when it is used for input method
     return ""
+
+
+def cls():
+    os.system('cls')
 
 
 main()
