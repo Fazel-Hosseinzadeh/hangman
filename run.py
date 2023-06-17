@@ -168,7 +168,7 @@ def guess(random_word):
     while True:
         #  User Interface in the game
         cprint( f"used_letters: {used_letters}\n", "blue") 
-        cprint(guessed_word, "yellow")
+        cprint(list_to_str(guessed_word), "yellow")
         cprint(f"Try: {stage} of 7\n" , "blue")
         cprint( hangman(stage), "blue")
 
@@ -210,6 +210,13 @@ def guess(random_word):
                     cprint(f"{input_letter} is NOT in the word", "cyan")
                     used_letters.add(input_letter)
                     stage += 1
-                
+
+
+def list_to_str(li):
+    str=""
+    for l in li:
+        str +=  " " + l + " "
+    return str.upper() 
+
 
 main()
