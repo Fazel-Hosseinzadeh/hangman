@@ -79,7 +79,7 @@ def word_picker(category):
     return random.choice(words)
 
 
-def cprint(text, color,inline=False):
+def cprint(text, color):
 
     #ANSI escape codes for bakcground colors
     colors = {
@@ -97,13 +97,10 @@ def cprint(text, color,inline=False):
     if color not in colors:
         color = 'reset'  # default to reset color
 
-    if inline==True:
-        # end= "" will add nothing in the end, instead of endline
-        print(f"{colors[color]}{text}{colors['reset']}", end="")
-    else:
-        print(f"{colors[color]}\n\n  {text}  \n\n{colors['reset']}")
-        #The return is added because of using it in input
-        return ""
+    
+    # end= "" will add nothing in the end, instead of endline
+    print(f"{colors[color]}{text}{colors['reset']}", end="")
+    return ""
 
 
 def menu(user_name):
@@ -176,23 +173,23 @@ def guess(random_word, category):
 
         cprint( hangman(stage), "blue")
 
-        cprint( f"Category: {category}", "blue", True)
-        cprint( f"  ", "black", True)
-        cprint(f"Try: {stage} of 7" , "blue", True)
+        cprint( f"Category: {category}", "blue")
+        cprint( f"  ", "black")
+        cprint(f"Try: {stage} of 7" , "blue")
         print("\n")
 
-        cprint( f"Used letters: {list_to_str(used_letters)}", "blue", True)
+        cprint( f"Used letters: {list_to_str(used_letters)}", "blue")
         print("\n")
         cprint(list_to_str(guessed_word), "yellow") 
 
         if stage > 6 :
-            cprint(f"You lost! The word is ", "red", True)
-            cprint(f"{random_word.capitalize()}", "green", True)
+            cprint(f"You lost! The word is ", "red")
+            cprint(f"{random_word.capitalize()}", "green")
             print("\n")
             break
         if "-" not in guessed_word:
-            cprint(f"You won! The word is ", "green", True)
-            cprint(f"{random_word.capitalize()}", "blue", True)
+            cprint(f"You won! The word is ", "green")
+            cprint(f"{random_word.capitalize()}", "blue")
             print("\n")
             break
 
@@ -240,6 +237,6 @@ def typing(str,color,speed):
     words = str
     for char in words:
         time.sleep(speed)
-        cprint(char,color,True)
+        cprint(char,color)
 
 main()
