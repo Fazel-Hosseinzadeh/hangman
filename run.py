@@ -147,9 +147,9 @@ def category_picker():
     while True:
         str_category=""
         cprint(play_cat, "blue")
-        category = input (cprint("Please pick one category", "yellow"))
+        category = input (typing("Please pick one category", "yellow", False, SLOW))
         if not category.isdigit():
-            cprint("please enter a number between 1 to 4", "red")
+            typing("please enter a number between 1 to 4", "red", False, FAST)
         elif category == '1':
             str_category="Countries"
             break
@@ -163,7 +163,7 @@ def category_picker():
             str_category="Objects"
             break
         else:
-            cprint("please enter a number between 1 to 4", "red")
+            typing("please enter a number between 1 to 4", "red", False, FAST)
     return int(category), str_category
 
 
