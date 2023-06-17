@@ -7,7 +7,7 @@ import time
 # Constant variable for typing()
 FAST=0.005
 SLOW=0.01
-SUPPERSLOW=0.8
+SUPPERSLOW=0.6
 
 def main():
     """
@@ -205,7 +205,7 @@ def guess(random_word, category):
             print("\n")
             break
 
-        input_letter= input(typing("Please insert a letter\n", "yellow", True, FAST))
+        input_letter= input(typing("\n Please insert a letter", "yellow",True, FAST))
 
         # check if more than one character inserted
         if len(input_letter)>1:
