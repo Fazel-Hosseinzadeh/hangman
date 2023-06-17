@@ -3,7 +3,6 @@ from graph import *
 from words import *
 import sys
 import time
-import os
 
 # Constant variable for typing()
 FAST=0.001
@@ -31,9 +30,6 @@ def get_user_name():
         user_name = input(typing("What is your name? (Just alphabetic characters)" ,"yellow", False, SLOW))
        
        # Refreshing screen after gettin input
-        clr()
-        cprint (logo, "magenta")
-
         if user_name.isalpha():
             user_name = user_name.capitalize()
             typing(f"Happy to have you here ", "yellow", True, SLOW)
@@ -53,10 +49,6 @@ def get_user_age(user_name):
    #Check if the user_age is a number
     while True:
         user_age=input(typing(f"How old are you {user_name}? (Just insert number)", "yellow", False, SLOW))
-       
-        # Refreshing screen after gettin input
-        clr()
-        cprint (logo, "magenta")
        
         if user_age.isdigit():
             break
@@ -275,9 +267,6 @@ def typing(str,color,inline=False,speed=0):
     # For avoid to print None when it is used for input method
     return ""
 
-
-def clr():
-    os.system('cls')
 
 
 main()
