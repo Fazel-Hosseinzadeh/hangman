@@ -200,8 +200,8 @@ def guess(random_word, category):
             print("\n")
             break
         if "-" not in guessed_word:
-            typing(f"You won! The word is ", "green", True, SLOW)
-            typing(f"{random_word.capitalize()}", "blue", True, SUPPERSLOW)
+            typing(f"You won! The word is ", "blue", True, SLOW)
+            typing(f"{random_word.capitalize()}", "green", True, SUPPERSLOW)
             print("\n")
             break
 
