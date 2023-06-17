@@ -7,8 +7,8 @@ def main():
     Getting user's name and age and starting (or restarting) and
       finishing the game 
     """
-    cprint (" "+logo, "magenta")
-    cprint("\n Welcome to HANGMAN game!\n\n","blue")
+    cprint (logo, "magenta")
+    cprint("Welcome to HANGMAN game!","blue")
     user_name = get_user_name()
     user_age = get_user_age(user_name)
     menu(user_name)
@@ -20,13 +20,13 @@ def get_user_name():
     """
     valid = False
     while (not valid):
-        user_name = input(cprint("\n What is your name? (Just alphabetic)\n\n" ,"yellow"))
+        user_name = input(cprint("What is your name? (Just alphabetic characters)" ,"yellow"))
         if user_name.isalpha():
             user_name = user_name.capitalize()
-            cprint(f"\n Happy to have you here {user_name}!\n\n", "yellow")
+            cprint(f"Happy to have you here {user_name}!", "yellow")
             valid = True
         else:
-            cprint("\n Name contains invalid characters. Try again!\n\n", "red")
+            cprint("Name contains invalid characters. Try again!", "red")
     return user_name
 
 
@@ -36,17 +36,17 @@ def get_user_age(user_name):
     """
    #Check if the user_age is a number
     while True:
-        user_age=input(cprint(f"\n How old are you {user_name}? (Just insert number)\n\n", "yellow"))
+        user_age=input(cprint(f"How old are you {user_name}? (Just insert number)", "yellow"))
         if user_age.isdigit():
             break
         else:
-            cprint("\n Just numbers are valid! Try again.\n\n", "red")
+            cprint("Just numbers are valid! Try again.", "red")
     
 # Check if the user_age is eligible
     if int(user_age) > 6:
-        cprint("\n you are eligible to play this game\n\n", "blue")
+        cprint("you are eligible to play this game", "blue")
     else:
-        cprint("\n you are NOT eligible to play this game\n\n", "red")
+        cprint("you are NOT eligible to play this game", "red")
         exit_game(user_name)
     return user_age
 
@@ -56,7 +56,7 @@ def exit_game(user):
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    cprint(f"\n Goodbye {user}! We hope you enjoyed your time with us.\n Exiting Hangman...\n\n", "blue")
+    cprint(f"Goodbye {user}! We hope you enjoyed your time with us.\n Exiting Hangman...", "blue")
     exit()
 
 
@@ -69,7 +69,7 @@ def rules():
         with open('rules.txt') as file:
             cprint(file.read(), "blue")
     except FileNotFoundError:
-        cprint("\n Unable to load rules\n\n", "red")
+        cprint("Unable to load rules", "red")
 
 
 def word_picker(category):
@@ -95,7 +95,7 @@ def cprint(text, color):
     if color not in colors:
         color = 'reset'  # default to reset color
 
-    print(f"{colors[color]}{text}{colors['reset']}")
+    print(f"{colors[color]}\n  {text}  \n\n{colors['reset']}")
     #The return is added because of using it in input
     return ""
 
@@ -103,26 +103,26 @@ def cprint(text, color):
 def menu(user_name):
     while True:
         cprint(menu_text, "cyan")
-        choose =input(cprint("\n Please choose from the menue:\n\n", "yellow"))
+        choose =input(cprint("Please choose from the menue:", "yellow"))
         if not choose.isdigit():
-            cprint("\n\n Please enter a number between 1 to 3\n\n", "red")
+            cprint("Please enter a number between 1 to 3", "red")
         elif choose == '1':
             rules()
         elif choose == '2':
             play(user_name)
         elif choose == '3':
             while True:
-                q=input(cprint(f"\n\n Press Y to quit, or any other key to continue.\n\n","blue"))
+                q=input(cprint(f"Press Y to quit, or any other key to continue.","blue"))
                 if q.lower()=='y':
                     exit_game(user_name)
                 else:
                     break
         else:
-            cprint("\n\n Please enter a number between 1 to 3\n\n", "red")
+            cprint("Please enter a number between 1 to 3", "red")
 
 
 def play(user_name):
-    cprint(f"\n You choosed to play. Good luck {user_name}!\n", "yellow")
+    cprint(f"You choosed to play. Good luck {user_name}!", "yellow")
     category = category_picker()
     random_word = word_picker(category)
     guess(random_word)
@@ -132,23 +132,23 @@ def category_picker():
     
     while True:
         cprint(play_cat, "blue")
-        category = input (cprint(" Please pick one category\n", "yellow"))
+        category = input (cprint("Please pick one category", "yellow"))
         if not category.isdigit():
-            cprint("\n please enter a number between 1 to 4\n", "red")
+            cprint("please enter a number between 1 to 4", "red")
         elif category == '1':
-            cprint("\n Category: Contries\n", "blue")
+            cprint("Category: Contries", "blue")
             break
         elif category == '2':
-            cprint("\n Category: Animals\n", "blue")
+            cprint("Category: Animals", "blue")
             break
         elif category == '3':
-            cprint("\n Category: Foods\n", "blue")
+            cprint("Category: Foods", "blue")
             break
         elif category == '4':
-            cprint("\n Category: Things\n", "blue")
+            cprint("Category: Things", "blue")
             break
         else:
-            cprint("\n please enter a number between 1 to 4\n", "red")
+            cprint("please enter a number between 1 to 4", "red")
     return int(category)
 
 
@@ -166,16 +166,16 @@ def guess(random_word):
     # Get a letter from user
     while True:
         #  User Interface in the game
-        cprint( f"used_letters: {list_to_str(used_letters)}\n", "blue") 
+        cprint( f"used_letters: {list_to_str(used_letters)}", "blue") 
         cprint(list_to_str(guessed_word), "yellow")
-        cprint(f"Try: {stage} of 7\n" , "blue")
+        cprint(f"Try: {stage} of 7" , "blue")
         cprint( hangman(stage), "blue")
 
         if stage > 6 :
-            cprint(f"You lost! The word is {random_word.capitalize()}\n", "red")
+            cprint(f"You lost! The word is {random_word.capitalize()}", "red")
             break
         if "-" not in guessed_word:
-            cprint(f"You won! The word is {random_word.capitalize()}\n", "green")
+            cprint(f"You won! The word is {random_word.capitalize()}", "green")
             break
 
         input_letter= input(cprint("Please insert a letter", "yellow"))
