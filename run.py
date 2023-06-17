@@ -141,7 +141,7 @@ def category_picker():
         if not category.isdigit():
             cprint("please enter a number between 1 to 4", "red")
         elif category == '1':
-            str_category="Contries"
+            str_category="Countries"
             break
         elif category == '2':
             str_category=" Animals"
@@ -150,7 +150,7 @@ def category_picker():
             str_category="Foods"
             break
         elif category == '4':
-            str_category="Things"
+            str_category="Objects"
             break
         else:
             cprint("please enter a number between 1 to 4", "red")
