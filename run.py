@@ -136,7 +136,7 @@ def menu(user_name):
 
 
 def play(user_name):
-    cprint(f"You choosed to play. Good luck {user_name}!", "yellow")
+    typing(f"You choosed to play. Good luck {user_name}!", "yellow", False, FAST)
     category, str_category = category_picker()
     random_word = word_picker(category)
     guess(random_word,str_category)
