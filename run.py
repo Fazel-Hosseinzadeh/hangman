@@ -22,13 +22,16 @@ def get_user_name():
     """
     valid = False
     while (not valid):
-        user_name = input(cprint("What is your name? (Just alphabetic characters)" ,"yellow"))
+        user_name = input(typing("What is your name? (Just alphabetic characters)" ,"yellow", False, 0.03))
         if user_name.isalpha():
             user_name = user_name.capitalize()
-            cprint(f"Happy to have you here {user_name}!", "yellow")
+            typing(f"Happy to have you here ", "yellow", True, 0.03)
+            typing(f"{user_name}!", "blue", True, 0.03)
+            # End of the line for inline elements
+            print("\n")
             valid = True
         else:
-            cprint("Name contains invalid characters. Try again!", "red")
+            typing("Name contains invalid characters. Try again!", "red", False, 0.001)
     return user_name
 
 
@@ -97,10 +100,10 @@ def cprint(text, color):
     if color not in colors:
         color = 'reset'  # default to reset color
 
-    
+
     # end= "" will add nothing in the end, instead of endline
     print(f"{colors[color]}{text}{colors['reset']}", end="")
-    return ""
+    
 
 
 def menu(user_name):
@@ -244,6 +247,8 @@ def typing(str,color,inline=False,speed=0):
 
     if not inline:
         print("\n")
+    # For avoid to print None when it is used for input method
+    return ""
 
 
 main()
