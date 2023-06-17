@@ -233,10 +233,17 @@ def list_to_str(li):
     return str.upper() 
 
 
-def typing(str,color,speed):
+def typing(str,color,inline=False,speed=0):
     words = str
+
+    if not inline:
+        print("\n")
     for char in words:
         time.sleep(speed)
         cprint(char,color)
+
+    if not inline:
+        print("\n")
+
 
 main()
