@@ -221,11 +221,11 @@ def guess(random_word, category):
                 """
                 input_letter=input_letter.lower()
                 if input_letter in used_letters:
-                    cprint(f"{input_letter} is alredy used", "red")
+                    cprint(f" {input_letter.upper()} is alredy used ", "red")
                     print("\n")
                 # If the letter is in the random_word_letters 
                 elif input_letter in random_word_letters:
-                    cprint(f"{input_letter} is in the word", "magenta")
+                    cprint(f" {input_letter.upper()} is in the word ", "green")
                     print("\n")
                     used_letters.append(input_letter)
                     # Updating the guessed_word
@@ -235,7 +235,7 @@ def guess(random_word, category):
                             
                 # If the letter is NOT in the random_word
                 elif input_letter not in random_word_letters:
-                    cprint(f"{input_letter} is NOT in the word", "cyan")
+                    cprint(f" {input_letter.upper()} is NOT in the word ", "magenta")
                     print("\n")
                     used_letters.append(input_letter)
                     stage += 1
