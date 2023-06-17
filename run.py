@@ -129,7 +129,7 @@ def play(user_name):
     cprint(f"You choosed to play. Good luck {user_name}!", "yellow")
     category = category_picker()
     random_word = word_picker(category)
-    guess(random_word)
+    guess(random_word,category)
         
 
 def category_picker():
@@ -156,7 +156,7 @@ def category_picker():
     return int(category)
 
 
-def guess(random_word):
+def guess(random_word, category):
     stage=int(0)
     used_letters=list()
     random_word_letters = list()
@@ -170,7 +170,8 @@ def guess(random_word):
     # Get a letter from user
     while True:
         #  User Interface in the game
-        cprint( f"used_letters: {list_to_str(used_letters)}", "blue") 
+        cprint( f"Category: {category}", "blue") 
+        cprint( f"Used letters: {list_to_str(used_letters)}", "blue") 
         cprint(list_to_str(guessed_word), "yellow")
         cprint(f"Try: {stage} of 7" , "blue")
         cprint( hangman(stage), "blue")
