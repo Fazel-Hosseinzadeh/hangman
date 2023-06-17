@@ -127,33 +127,34 @@ def menu(user_name):
 
 def play(user_name):
     cprint(f"You choosed to play. Good luck {user_name}!", "yellow")
-    category = category_picker()
+    category, str_category = category_picker()
     random_word = word_picker(category)
-    guess(random_word,category)
+    guess(random_word,str_category)
         
 
 def category_picker():
     
     while True:
+        str_category=""
         cprint(play_cat, "blue")
         category = input (cprint("Please pick one category", "yellow"))
         if not category.isdigit():
-            cprint("please enter a number between 1 to 4", "red")
+            str_category="please enter a number between 1 to 4"
         elif category == '1':
-            cprint("Category: Contries", "blue")
+            str_category="Contries"
             break
         elif category == '2':
-            cprint("Category: Animals", "blue")
+            str_category=" Animals"
             break
         elif category == '3':
-            cprint("Category: Foods", "blue")
+            str_category="Foods"
             break
         elif category == '4':
-            cprint("Category: Things", "blue")
+            str_category="Things"
             break
         else:
             cprint("please enter a number between 1 to 4", "red")
-    return int(category)
+    return int(category), str_category
 
 
 def guess(random_word, category):
