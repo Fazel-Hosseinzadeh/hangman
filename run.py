@@ -129,7 +129,7 @@ def menu(user_name):
         cprint(menu_text, "cyan")
         # Giving space to input
         print("\n")
-        choose =input(typing("Please choose from the menue:", "yellow", False, SLOW))
+        choose =input(typing("Please choose from the menu:", "yellow", False, SLOW))
         if not choose.isdigit():
             typing("Please enter a number between 1 to 3", "red" ,False, FAST)
         elif choose == '1':
