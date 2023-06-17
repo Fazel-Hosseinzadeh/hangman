@@ -210,15 +210,15 @@ def guess(random_word, category):
             print("\n")
             break
 
-        input_letter= input(typing("Please insert a letter\n", "yellow", True, FAST))
+        input_letter= input(typing("Please insert a letter", "yellow", False, FAST))
 
         # check if more than one character inserted
         if len(input_letter)>1:
-            typing("Just one letter per time. Try again!", "red", True, FAST)
+            typing("Just one letter per time. Try again!", "red", False, FAST)
         else:
             # check if character is alphabatic or not
             if not input_letter.isalpha():
-                typing("Just letters are valid. Try again!", "red", True, FAST)
+                typing("Just letters are valid. Try again!", "red", False, FAST)
             else:
                 """
                 We are sure input_letter is letter,so we can use .lower() 
