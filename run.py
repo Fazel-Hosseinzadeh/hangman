@@ -6,7 +6,7 @@ import time
 
 # Constant variable for typing()
 FAST=0.005
-SLOW=0.01
+SLOW=0.03
 SUPPERSLOW=0.6
 
 def main():
@@ -201,7 +201,7 @@ def guess(random_word, category):
             break
         if "-" not in guessed_word:
             typing(f"You won! The word is ", "green", True, SLOW)
-            typing(f"{random_word.capitalize()}", "blue", True, SLOW)
+            typing(f"{random_word.capitalize()}", "blue", True, SUPPERSLOW)
             print("\n")
             break
 
