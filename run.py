@@ -184,7 +184,7 @@ def guess(random_word, category):
     
     # Get a letter from user
     while True:
-        #  User Interface in the game
+        #  User Interface in the game (UI)
 
         cprint( f"Category: {category}", "blue")
         print("\n")
@@ -205,7 +205,7 @@ def guess(random_word, category):
             print("\n")
             break
 
-        input_letter= input(typing("\n Please insert a letter", "yellow",True, FAST))
+        input_letter= input(typing("\n Please insert a letter", "yellow",True, SLOW))
 
         # check if more than one character inserted
         if len(input_letter)>1:
