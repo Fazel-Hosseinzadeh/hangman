@@ -74,7 +74,7 @@ def rules():
         with open('rules.txt') as file:
             cprint(file.read(), "blue")
     except FileNotFoundError:
-        cprint("Unable to load rules", "red")
+        typing("Unable to load rules", "red", True, 0)
 
 
 def word_picker(category):
