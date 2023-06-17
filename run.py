@@ -6,7 +6,8 @@ import time
 
 # Constant variable for typing()
 FAST=0.001
-SLOW=0.03
+SLOW=0.005
+SUPPERSLOW=0.5
 
 def main():
     """
@@ -182,37 +183,41 @@ def guess(random_word, category):
     while True:
         #  User Interface in the game
 
-        cprint( hangman(stage), "blue")
-
-        cprint( f"Category: {category}", "blue")
-        cprint( f"  ", "black")
-        cprint(f"Try: {stage} of 7" , "blue")
-        print("\n")
+        #cprint( f"  ", "black")
+        #cprint(f"Try: {stage} of 7" , "blue")
+        #print("\n")
 
         cprint( f"Used letters: {list_to_str(used_letters)}", "blue")
         print("\n")
-        cprint(list_to_str(guessed_word), "yellow") 
+        cprint(list_to_str(guessed_word), "yellow")
+        print("\n")
+
+        cprint( hangman(stage), "magenta")
+        # Giving space to next block
+        print("\n")
+
 
         if stage > 6 :
-            cprint(f"You lost! The word is ", "red")
-            cprint(f"{random_word.capitalize()}", "green")
+            typing(f"You lost! The word is ", "red", True, SLOW)
+            # Special speed for showing the random_word
+            typing(f"{random_word.capitalize()}", "green", True, SUPPERSLOW)
             print("\n")
             break
         if "-" not in guessed_word:
-            cprint(f"You won! The word is ", "green")
-            cprint(f"{random_word.capitalize()}", "blue")
+            typing(f"You won! The word is ", "green", True, SLOW)
+            typing(f"{random_word.capitalize()}", "blue", True, SLOW)
             print("\n")
             break
 
-        input_letter= input(cprint("Please insert a letter", "yellow"))
+        input_letter= input(typing("Please insert a letter\n", "yellow", True, FAST))
 
         # check if more than one character inserted
         if len(input_letter)>1:
-            cprint("Just one letter per time. Try again!", "red")
+            typing("Just one letter per time. Try again!", "red", True, FAST)
         else:
             # check if character is alphabatic or not
             if not input_letter.isalpha():
-                cprint("Just letters are valid. Try again!", "red")
+                typing("Just letters are valid. Try again!", "red", True, FAST)
             else:
                 """
                 We are sure input_letter is letter,so we can use .lower() 
@@ -221,9 +226,11 @@ def guess(random_word, category):
                 input_letter=input_letter.lower()
                 if input_letter in used_letters:
                     cprint(f"{input_letter} is alredy used", "red")
+                    print("\n")
                 # If the letter is in the random_word_letters 
                 elif input_letter in random_word_letters:
                     cprint(f"{input_letter} is in the word", "magenta")
+                    print("\n")
                     used_letters.append(input_letter)
                     # Updating the guessed_word
                     for i in range(len(random_word_letters)):
@@ -233,6 +240,7 @@ def guess(random_word, category):
                 # If the letter is NOT in the random_word
                 elif input_letter not in random_word_letters:
                     cprint(f"{input_letter} is NOT in the word", "cyan")
+                    print("\n")
                     used_letters.append(input_letter)
                     stage += 1
 
