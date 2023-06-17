@@ -171,17 +171,26 @@ def guess(random_word, category):
     # Get a letter from user
     while True:
         #  User Interface in the game
-        cprint( f"Category: {category}", "blue") 
-        cprint( f"Used letters: {list_to_str(used_letters)}", "blue") 
-        cprint(list_to_str(guessed_word), "yellow")
-        cprint(f"Try: {stage} of 7" , "blue")
+
         cprint( hangman(stage), "blue")
 
+        cprint( f"Category: {category}", "blue", True)
+        cprint( f"  ", "black", True)
+        cprint(f"Try: {stage} of 7" , "blue", True)
+        print("\n")
+
+        
+        cprint(list_to_str(guessed_word), "yellow", True)
+        cprint( f"Used letters: {list_to_str(used_letters)}", "blue", True) 
+        print("\n")
+
         if stage > 6 :
-            cprint(f"You lost! The word is {random_word.capitalize()}", "red")
+            cprint(f"You lost! The word is ", "red", True)
+            cprint(f"{random_word.capitalize()}", "green", True)
             break
         if "-" not in guessed_word:
-            cprint(f"You won! The word is {random_word.capitalize()}", "green")
+            cprint(f"You won! The word is ", "green", True)
+            cprint(f"{random_word.capitalize()}", "blue", True)
             break
 
         input_letter= input(cprint("Please insert a letter", "yellow"))
