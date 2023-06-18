@@ -30,7 +30,11 @@ def main():
 
 def get_user_name():
     """
-    Get a name from user and check if all are alphabetic
+    Prompt the user to enter their name and validate if it contains only alphabetic characters.
+
+    Returns:
+        str: The validated user name with only alphabetic characters, capitalized.
+
     """
     valid = False
     while not valid:
