@@ -262,8 +262,8 @@ def list_to_str(li):
     return st.upper()
 
 
-def typing(str, color, inline=False, speed=0):
-    words = str
+def typing(text, color, inline=False, speed=0):
+    words = text
 
     if not inline:
         print("\n")
