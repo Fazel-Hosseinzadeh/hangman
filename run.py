@@ -256,10 +256,10 @@ def guess(random_word, category):
 
 
 def list_to_str(li):
-    st = ""
+    text = ""
     for letter in li:
-        st += " " + letter + " "
-    return st.upper()
+        text += " " + letter + " "
+    return text.upper()
 
 
 def typing(text, color, inline=False, speed=0):
