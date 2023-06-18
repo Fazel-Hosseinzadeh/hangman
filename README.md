@@ -19,7 +19,7 @@ All the words used in this game are categorized into four categories: Countries,
 ## User Experience (UX)
 - ### UX
 
-  - #### As a User, I should to be able to:
+   #### As a User, I should to be able to:
 
     1. Acquire a clear comprehension of how to navigate the game and start playing.
     2. Conveniently obtain comprehensive guidelines for gameplay.
