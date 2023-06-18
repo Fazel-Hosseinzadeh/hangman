@@ -121,6 +121,16 @@ def rules():
 
 
 def word_picker(category):
+    """
+    Pick a random word from the specified category.
+
+    Args:
+        category (int): The category index to pick the word from.
+
+    Returns:
+        str: The randomly picked word.
+
+    """
     words = categories[category]
     return random.choice(words)
 
