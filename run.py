@@ -30,7 +30,7 @@ def get_user_name():
     Get a name from user and check if all are alphabetic
     """
     valid = False
-    while (not valid):
+    while not valid:
         user_name = input(typing((
             "What is your name? (Just alphabetic characters)"
             ), "yellow", False, SLOW))
@@ -141,10 +141,10 @@ def menu(user_name):
             play(user_name)
         elif choose == '3':
             while True:
-                q = input(typing((
+                quit = input(typing((
                     "Press Y to exit, or any other key to continue."
                     ), "blue", False, FAST))
-                if q.lower() == 'y':
+                if quit.lower() == 'y':
                     exit_game(user_name)
                 else:
                     break
