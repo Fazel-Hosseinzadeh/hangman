@@ -333,6 +333,17 @@ def guess(random_word, category):
 
 
 def list_to_str(li):
+    """
+    Convert a list of letters to a formatted string representation.
+
+    Args:
+        li (list): A list of letters.
+
+    Returns:
+        str: The formatted string representation of the list,
+             with letters separated by spaces and capitalized.
+
+    """
     text = ""
     for letter in li:
         text += " " + letter + " "
@@ -340,6 +351,21 @@ def list_to_str(li):
 
 
 def typing(text, color, inline=False, speed=0):
+    """
+    Simulate typing effect for displaying text.
+
+    Args:
+        text (str): The text to be displayed.
+        color (str): The color of the text.
+        inline (bool, optional): Whether to display the text inline without a
+        new line. Defaults to False.
+        speed (float, optional): The speed of typing, representing the delay
+        between each character. Defaults to 0.
+
+    Returns:
+        str: An empty string.
+
+    """
     words = text
     if not inline:
         print("\n")
