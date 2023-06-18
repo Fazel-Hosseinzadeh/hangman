@@ -87,8 +87,14 @@ def get_user_age(user_name):
 
 def exit_game(user):
     """
-    This function will simply raise SystemExit and
-    the reason of its exist is to avoid repeatation
+    Exit the Hangman game and display a farewell message to the user.
+
+    Args:
+        user (str): The name of the user.
+
+    Returns:
+        None
+
     """
     typing((
         f" Goodbye {user}!\n We hope you enjoyed your time here.\n"
