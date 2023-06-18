@@ -101,8 +101,14 @@ def exit_game(user):
 
 def rules():
     """
-    This function will read the file rules.txt and
-    print it in the console
+    Display the rules of the game by reading them from a file.
+
+    Raises:
+        FileNotFoundError: If the rules file 'rules.txt' is not found.
+
+    Returns:
+        None
+
     """
     try:
         # The "with" statement takes care of closing the file
