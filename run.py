@@ -57,8 +57,15 @@ def get_user_name():
 
 
 def get_user_age(user_name):
-    """
-    Get the age and check if all is digit and then ckech the eligibility
+ """
+    Prompt the user to enter their age, validate if it contains only digits, and check eligibility.
+
+    Args:
+        user_name (str): The name of the user.
+
+    Returns:
+        str: The validated user age.
+
     """
     # Check if the user_age is a number
     while True:
