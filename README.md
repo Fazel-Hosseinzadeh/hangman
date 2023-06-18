@@ -112,3 +112,33 @@ By utilizing ANSI escape codes for background color changes, the Hangman game ac
 - [Git](https://git-scm.com/) Git was employed for version control, utilizing the Gitpod terminal to perform Git commits and push changes to GitHub.
 - [GitHub:](https://github.com/) GitHub serves as a repository for storing the project's code after it has been pushed from Git.
 - [Heroku:](https://dashboard.heroku.com/) The application was deployed using Heroku.
+
+## Deployment
+
+The site was deployed to Heroku. The steps to deploy are as follows:
+  1. Log in to Heroku.
+  2. Click "Create new app".
+  3. Choose app name and choose a region.
+  4. Click "Create app".
+  5. Navigate to the "settings" tab.
+  6. "Click "Reveal Config Vars".
+  7. Add Config Var in Heroku's Settings. The key is PORT and the value is 8000
+  8. Scroll down to "Buildpacks".
+  9. Click "Add Buildpack".
+  10. First add "python", click save.
+  11. Second add "nodejs", click save.
+
+### Automated Deployments from GitHub disabled by Heroku.
+
+Follow the steps below to deploy from your Gitpod workspace:
+  1. Open the terminal.
+  2. command: heroku login -i
+  3. Get your app name from heroku.
+  4. command: heroku apps
+  5. Set the heroku remote. (Replace <app_name> with your actual app name and remove the <> characters)
+  6. command: heroku git:remote -a <app_name>
+  7. Add and commit any changes to your code if applicable
+  8. command: git add . && git commit -m "Deploy to Heroku via CLI"
+  9. Push to both GitHub and Heroku
+  10. command: git push origin main
+  11. command: git push heroku main
