@@ -227,6 +227,13 @@ def play(user_name):
 
 
 def category_picker():
+    """
+    Prompt the user to pick a category and return the category number and name.
+
+    Returns:
+        tuple: A tuple containing the category number (int) and name (str).
+
+    """
     while True:
         str_category = ""
         cprint(play_cat, "blue")
@@ -255,6 +262,14 @@ def category_picker():
 
 
 def guess(random_word, category):
+    """
+    Play the guessing game with the given random word and category.
+
+    Args:
+        random_word (str): The randomly chosen word to guess.
+        category (str): The category of the word.
+
+    """
     stage = int(0)
     used_letters = list()
     random_word_letters = list()
