@@ -180,7 +180,7 @@ def menu(user_name):
     Returns:
         None
 
-    """     
+    """
     while True:
         cprint(menu_text, "cyan")
         # Giving space to input
@@ -208,6 +208,16 @@ def menu(user_name):
 
 
 def play(user_name):
+    """
+    Start the game and handle the gameplay.
+
+    Args:
+        user_name (str): The name of the user.
+
+    Returns:
+        None
+
+    """
     typing((
         f"You choosed to play. Good luck {user_name}!"
         ), "yellow", False, SLOW)
