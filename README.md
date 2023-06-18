@@ -150,3 +150,6 @@ Follow the steps below to deploy from your Gitpod workspace:
 - [Stackoverflow:](https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal) How do I print colored text to the terminal.
 - [Invent with python:](https://www.kaggle.com/general/273188)  Add Colour to Text in Python.
 
+### Acknowledgements
+
+- I am grateful to my mentor, Brian Macharia from Code Institute, for providing code reviews, assistance, and feedback.
