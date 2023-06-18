@@ -31,14 +31,11 @@ categories=[
     'Penguin',
     'Ocelot',
     'Warthog',
-    'Flamingo',
     'Pheasant',
     'Termite',
     'Parakeet',
-    'Stingray',
     'Mallard',
     'Bullfrog',
-    'Woodpecker',
     'Mosquito',
     'Chinchilla',
     ),
@@ -46,7 +43,6 @@ categories=[
     (
     'Pancake',
     'Risotto',
-    'Dumplings',
     'Gnocchi',
     'Couscous',
     'Barbecue',
@@ -71,10 +67,8 @@ categories=[
     'Handbag',
     'Balloon',
     'Scissors',
-    'Keyboard',
     'Compass',
     'Trousers',
-    'Briefcase',
     'Necklace',
     )
 ]
