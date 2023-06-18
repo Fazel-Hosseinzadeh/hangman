@@ -21,7 +21,7 @@ def main():
     cprint(logo, "magenta")
     typing("Welcome to HANGMAN game!", "blue", False, SLOW)
     user_name = get_user_name()
-    user_age = get_user_age(user_name)
+    get_user_age(user_name)
     menu(user_name)
 
 
