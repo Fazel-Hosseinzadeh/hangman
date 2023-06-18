@@ -137,7 +137,21 @@ def word_picker(category):
 
 def cprint(text, color):
     """
-    """
+Print colored text using ANSI escape codes for background colors.
+
+Args:
+    text (str): The text to be printed.
+    color (str): The background color to be used.
+                 Supported colors are 'black', 'red',
+                 'green', 'yellow', 'blue', 'magenta',
+                 'cyan', 'white', and 'reset'. If an invalid
+                 color is provided, the text will be printed with
+                 the default 'reset' color.
+
+Returns:
+    None
+
+"""
     # ANSI escape codes for bakcground colors
     colors = {
         'black': '\033[1;40m',
