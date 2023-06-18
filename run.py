@@ -5,8 +5,6 @@ from graph import logo
 from graph import menu_text
 from graph import play_cat
 from words import categories
-
-
 # Constant variable for typing()
 FAST = 0.005
 SLOW = 0.03
@@ -16,9 +14,9 @@ SUPPERSLOW = 0.6
 def main():
     """
     Executes the main logic of the HANGMAN game.
-
-    This function displays the game's logo, welcomes the user to the HANGMAN game,
-    prompts the user to enter their name, retrieves the user's age,
+    This function displays the game's logo, welcomes
+    the user to the HANGMAN game,prompts the user to
+    enter their name, retrieves the user's age,
     and displays the game menu.
     """
     cprint(logo, "magenta")
@@ -30,11 +28,11 @@ def main():
 
 def get_user_name():
     """
-    Prompt the user to enter their name and validate if it contains only alphabetic characters.
-
+    Prompt the user to enter their name and validate if
+    it contains only alphabetic characters.
     Returns:
-        str: The validated user name with only alphabetic characters, capitalized.
-
+        str: The validated user name with only
+             alphabetic characters, capitalized.
     """
     valid = False
     while not valid:
@@ -57,15 +55,13 @@ def get_user_name():
 
 
 def get_user_age(user_name):
- """
-    Prompt the user to enter their age, validate if it contains only digits, and check eligibility.
-
+    """
+    Prompt the user to enter their age, validate if it contains only digits,
+    and check eligibility.
     Args:
         user_name (str): The name of the user.
-
     Returns:
         str: The validated user age.
-
     """
     # Check if the user_age is a number
     while True:
@@ -94,8 +90,8 @@ def exit_game(user):
 
     Returns:
         None
-
     """
+
     typing((
         f" Goodbye {user}!\n We hope you enjoyed your time here.\n"
         "Exiting Hangman..."
@@ -138,7 +134,6 @@ def cprint(text, color):
         'white': '\033[1;47m',
         'reset': '\033[1;0m'
     }
-
     if color not in colors:
         color = 'reset'  # default to reset color
     # end= "" will add nothing in the end, instead of endline
@@ -225,7 +220,6 @@ def guess(random_word, category):
         print("\n")
         cprint(f"Used letters: {list_to_str(used_letters)}", "blue")
         typing(list_to_str(guessed_word), "yellow", False, 0)
-
         cprint(hangman(stage), "magenta")
         if stage > 6:
             typing("You lost! The word is ", "red", True, SLOW)
@@ -238,11 +232,9 @@ def guess(random_word, category):
             typing(f"{random_word.capitalize()}", "green", True, SUPPERSLOW)
             print("\n")
             break
-
         input_letter = input(typing((
             "\n Please insert a letter"
             ), "yellow", True, SLOW))
-
         # check if more than one character inserted
         if len(input_letter) > 1:
             typing("Just one letter per time. Try again!", "red", False, FAST)
@@ -284,13 +276,11 @@ def list_to_str(li):
 
 def typing(text, color, inline=False, speed=0):
     words = text
-
     if not inline:
         print("\n")
     for char in words:
         time.sleep(speed)
         cprint(char, color)
-
     if not inline:
         print("\n")
     # For avoid to print None when it is used for input method
