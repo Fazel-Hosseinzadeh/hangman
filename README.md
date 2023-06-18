@@ -82,6 +82,18 @@ All the words used in this game are categorized into four categories: Countries,
             ![Lost](documentation/lost.png)
 - ### Future Features
         - In order to cater to a wider audience, the Hangman game can be enhanced with multi-language support. This feature allows players to enjoy the game in languages other than English.
+## Design
+- To enhance the visual appeal and create a more engaging user interface, the Hangman game utilizes ANSI escape codes to change the background colors. This feature adds a touch of color and liveliness to the terminal-based game.
+
+Here's how the design aspect is implemented:
+
+   1.   Background Color Selection: The game utilizes a dictionary of ANSI escape codes, mapping different color names to their corresponding escape sequences. These color names include black, red, green, yellow, blue, magenta, cyan, white, and reset (to revert back to the default color).
+
+   2.   Colorful Text Output: The chosen background color is applied to the text by surrounding it with the appropriate escape sequences. This creates a visually distinct and colorful presentation for different sections of the game, such as menu options, messages, and graphical elements.
+
+   3.   Color Feedback: The background color is used to provide visual feedback to the player. For example, a correct letter guessed might be displayed in green, indicating success, while an incorrect letter might be displayed in red, indicating a wrong guess. This color feedback enhances the gaming experience and helps the player easily interpret the game's status.
+
+   By utilizing ANSI escape codes for background color changes, the Hangman game achieves a more vibrant and visually appealing user interface. The use of colors adds an extra dimension to the gameplay and creates an immersive experience for the players.
         
 
 
