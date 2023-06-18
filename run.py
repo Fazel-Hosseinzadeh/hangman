@@ -31,7 +31,9 @@ def get_user_name():
     """
     valid = False
     while (not valid):
-        user_name = input(typing("What is your name? (Just alphabetic characters)", "yellow", False, SLOW))
+        user_name = input(typing((
+            "What is your name? (Just alphabetic characters)"
+            ), "yellow", False, SLOW))
         # Refreshing screen after gettin input
         if user_name.isalpha():
             user_name = user_name.capitalize()
@@ -41,7 +43,9 @@ def get_user_name():
             print("\n")
             valid = True
         else:
-            typing("Name contains invalid characters. Try again!", "red", False, FAST)
+            typing((
+                "Name contains invalid characters. Try again!"
+                ), "red", False, FAST)
     return user_name
 
 
@@ -51,7 +55,9 @@ def get_user_age(user_name):
     """
     # Check if the user_age is a number
     while True:
-        user_age = input(typing(f"How old are you {user_name}? (Just insert number)", "yellow", False, SLOW))
+        user_age = input(typing((
+            f"How old are you {user_name}? (Just insert number)"
+            ), "yellow", False, SLOW))
         if user_age.isdigit():
             break
         else:
@@ -70,7 +76,10 @@ def exit_game(user):
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    typing(f" Goodbye {user}!\n We hope you enjoyed your time here.\n Exiting Hangman...", "blue", False, FAST)
+    typing((
+        f" Goodbye {user}!\n We hope you enjoyed your time here.\n"
+        "Exiting Hangman..."
+        ), "blue", False, FAST)
     exit()
 
 
@@ -80,6 +89,7 @@ def rules():
     print it in the console
     """
     try:
+        # The "with" statement takes care of closing the file
         with open('rules.txt') as file:
             cprint(file.read(), "blue")
             # Spacing from menu
@@ -120,7 +130,9 @@ def menu(user_name):
         cprint(menu_text, "cyan")
         # Giving space to input
         print("\n")
-        choose = input(typing("Please choose from the menu:", "yellow", False, SLOW))
+        choose = input(typing((
+            "Please choose from the menu:"
+            ), "yellow", False, SLOW))
         if not choose.isdigit():
             typing("Please enter a number between 1 to 3", "red", False, FAST)
         elif choose == '1':
@@ -129,7 +141,9 @@ def menu(user_name):
             play(user_name)
         elif choose == '3':
             while True:
-                q = input(typing("Press Y to exit, or any other key to continue.", "blue", False, FAST))
+                q = input(typing((
+                    "Press Y to exit, or any other key to continue."
+                    ), "blue", False, FAST))
                 if q.lower() == 'y':
                     exit_game(user_name)
                 else:
@@ -139,18 +153,21 @@ def menu(user_name):
 
 
 def play(user_name):
-    typing(f"You choosed to play. Good luck {user_name}!", "yellow", False, SLOW)
+    typing((
+        f"You choosed to play. Good luck {user_name}!"
+        ), "yellow", False, SLOW)
     category, str_category = category_picker()
     random_word = word_picker(category)
     guess(random_word, str_category)
 
 
 def category_picker():
-    
     while True:
         str_category = ""
         cprint(play_cat, "blue")
-        category = input(typing("Please pick one category", "yellow", False, SLOW))
+        category = input(typing((
+            "Please pick one category"
+            ), "yellow", False, SLOW))
         if not category.isdigit():
             typing("please enter a number between 1 to 4", "red", False, FAST)
         elif category == '1':
@@ -166,7 +183,9 @@ def category_picker():
             str_category = "Objects"
             break
         else:
-            typing("please enter a number between 1 to 4", "red", False, FAST)
+            typing((
+                "please enter a number between 1 to 4"
+                 ), "red", False, FAST)
     return int(category), str_category
 
 
@@ -200,7 +219,9 @@ def guess(random_word, category):
             print("\n")
             break
 
-        input_letter = input(typing("\n Please insert a letter", "yellow", True, SLOW))
+        input_letter = input(typing((
+            "\n Please insert a letter"
+            ), "yellow", True, SLOW))
 
         # check if more than one character inserted
         if len(input_letter) > 1:
@@ -208,7 +229,9 @@ def guess(random_word, category):
         else:
             # check if character is alphabatic or not
             if not input_letter.isalpha():
-                typing("Just letters are valid. Try again!", "red", False, FAST)
+                typing((
+                    "Just letters are valid. Try again!"
+                    ), "red", False, FAST)
             else:
                 input_letter = input_letter.lower()
                 if input_letter in used_letters:
@@ -221,10 +244,12 @@ def guess(random_word, category):
                     # Updating the guessed_word
                     for i in range(len(random_word_letters)):
                         if random_word_letters[i] == input_letter:
-                            guessed_word[i] = input_letter                        
+                            guessed_word[i] = input_letter
                 # If the letter is NOT in the random_word
                 elif input_letter not in random_word_letters:
-                    cprint(f" {input_letter.upper()} is NOT in the word ", "magenta")
+                    cprint((
+                        f" {input_letter.upper()} is NOT in the word "
+                        ), "magenta")
                     print("\n")
                     used_letters.append(input_letter)
                     stage += 1
