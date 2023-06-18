@@ -44,9 +44,9 @@ All the words used in this game are categorized into four categories: Countries,
     - Once the player is eligible to play the Hangman Game, they are presented with a main menu that offers three options: viewing the game rules, starting the game, or exiting the game. The main menu allows the player to choose their desired action.
       The player can enter the corresponding number to select their desired option.
 
-           - If the player selects option 1, the game displays the rules of the Hangman Game.
-           - If the player selects option 2, the game starts and the player can begin guessing the letters to uncover the secret word.
-           - If the player selects option 3, the game exits gracefully with a goodbye message.
+      - If the player selects option 1, the game displays the rules of the Hangman Game.
+      - If the player selects option 2, the game starts and the player can begin guessing the letters to uncover the secret word.
+      - If the player selects option 3, the game exits gracefully with a goodbye message.
 
     The main menu provides an easy and intuitive way for the player to access the different functionalities of the game, allowing them to choose whether to view the rules, play the game, or exit.
 
