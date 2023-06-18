@@ -15,8 +15,11 @@ SUPPERSLOW = 0.6
 
 def main():
     """
-    Getting user's name and age and starting (or restarting) and
-      finishing the game
+    Executes the main logic of the HANGMAN game.
+
+    This function displays the game's logo, welcomes the user to the HANGMAN game,
+    prompts the user to enter their name, retrieves the user's age,
+    and displays the game menu.
     """
     cprint(logo, "magenta")
     typing("Welcome to HANGMAN game!", "blue", False, SLOW)
