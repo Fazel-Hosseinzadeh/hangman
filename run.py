@@ -232,9 +232,9 @@ def guess(random_word, category):
 
 def list_to_str(li):
     st = ""
-    for l in li:
-        st += " " + l + " "
-    return st.upper() 
+    for letter in li:
+        st += " " + letter + " "
+    return st.upper()
 
 
 def typing(str, color, inline=False, speed=0):
