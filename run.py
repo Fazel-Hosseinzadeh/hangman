@@ -1,21 +1,25 @@
 import random
-from graph import *
-from words import *
-import sys
 import time
+from graph import hangman
+from graph import logo
+from graph import menu_text
+from graph import play_cat
+from words import categories
+
 
 # Constant variable for typing()
-FAST=0.005
-SLOW=0.03
-SUPPERSLOW=0.6
+FAST = 0.005
+SLOW = 0.03
+SUPPERSLOW = 0.6
+
 
 def main():
     """
     Getting user's name and age and starting (or restarting) and
       finishing the game
     """
-    cprint (logo, "magenta")
-    typing("Welcome to HANGMAN game!","blue", False, SLOW)
+    cprint(logo, "magenta")
+    typing("Welcome to HANGMAN game!", "blue", False, SLOW)
     user_name = get_user_name()
     user_age = get_user_age(user_name)
     menu(user_name)
@@ -27,12 +31,11 @@ def get_user_name():
     """
     valid = False
     while (not valid):
-        user_name = input(typing("What is your name? (Just alphabetic characters)" ,"yellow", False, SLOW))
-       
-       # Refreshing screen after gettin input
+        user_name = input(typing("What is your name? (Just alphabetic characters)", "yellow", False, SLOW))
+        # Refreshing screen after gettin input
         if user_name.isalpha():
             user_name = user_name.capitalize()
-            typing(f"Happy to have you here ", "yellow", True, SLOW)
+            typing("Happy to have you here ", "yellow", True, SLOW)
             typing(f"{user_name}!", "cyan", True, SLOW)
             # End of the line for inline elements
             print("\n")
@@ -46,20 +49,18 @@ def get_user_age(user_name):
     """
     Get the age and check if all is digit and then ckech the eligibility
     """
-   #Check if the user_age is a number
+    # Check if the user_age is a number
     while True:
-        user_age=input(typing(f"How old are you {user_name}? (Just insert number)", "yellow", False, SLOW))
-       
+        user_age = input(typing(f"How old are you {user_name}? (Just insert number)", "yellow", False, SLOW))
         if user_age.isdigit():
             break
         else:
-            typing("Just numbers are valid! Try again.", "red",False, FAST)
-    
+            typing("Just numbers are valid! Try again.", "red", False, FAST)
 # Check if the user_age is eligible
     if int(user_age) > 6:
-        typing("you are eligible to play this game", "blue",False, SLOW)
+        typing("you are eligible to play this game", "blue", False, SLOW)
     else:
-        typing("you are NOT eligible to play this game", "red",False, FAST)
+        typing("you are NOT eligible to play this game", "red", False, FAST)
         exit_game(user_name)
     return user_age
 
@@ -69,7 +70,7 @@ def exit_game(user):
     This function will simply raise SystemExit and
     the reason of its exist is to avoid repeatation
     """
-    typing(f" Goodbye {user}!\n We hope you enjoyed your time here.\n Exiting Hangman...", "blue",False, FAST)
+    typing(f" Goodbye {user}!\n We hope you enjoyed your time here.\n Exiting Hangman...", "blue", False, FAST)
     exit()
 
 
@@ -93,8 +94,9 @@ def word_picker(category):
 
 
 def cprint(text, color):
-
-    #ANSI escape codes for bakcground colors
+    """
+    """
+    # ANSI escape codes for bakcground colors
     colors = {
         'black': '\033[1;40m',
         'red': '\033[1;41m',
@@ -109,11 +111,8 @@ def cprint(text, color):
 
     if color not in colors:
         color = 'reset'  # default to reset color
-
-
     # end= "" will add nothing in the end, instead of endline
     print(f"{colors[color]}{text}{colors['reset']}", end="")
-    
 
 
 def menu(user_name):
@@ -121,50 +120,50 @@ def menu(user_name):
         cprint(menu_text, "cyan")
         # Giving space to input
         print("\n")
-        choose =input(typing("Please choose from the menu:", "yellow", False, SLOW))
+        choose = input(typing("Please choose from the menu:", "yellow", False, SLOW))
         if not choose.isdigit():
-            typing("Please enter a number between 1 to 3", "red" ,False, FAST)
+            typing("Please enter a number between 1 to 3", "red", False, FAST)
         elif choose == '1':
             rules()
         elif choose == '2':
             play(user_name)
         elif choose == '3':
             while True:
-                q=input(typing(f"Press Y to exit, or any other key to continue.","blue",False, FAST))
-                if q.lower()=='y':
+                q = input(typing("Press Y to exit, or any other key to continue.", "blue", False, FAST))
+                if q.lower() == 'y':
                     exit_game(user_name)
                 else:
                     break
         else:
-            typing("Please enter a number between 1 to 3", "red",False, FAST)
+            typing("Please enter a number between 1 to 3", "red", False, FAST)
 
 
 def play(user_name):
     typing(f"You choosed to play. Good luck {user_name}!", "yellow", False, SLOW)
     category, str_category = category_picker()
     random_word = word_picker(category)
-    guess(random_word,str_category)
-        
+    guess(random_word, str_category)
+
 
 def category_picker():
     
     while True:
-        str_category=""
+        str_category = ""
         cprint(play_cat, "blue")
-        category = input (typing("Please pick one category", "yellow", False, SLOW))
+        category = input(typing("Please pick one category", "yellow", False, SLOW))
         if not category.isdigit():
             typing("please enter a number between 1 to 4", "red", False, FAST)
         elif category == '1':
-            str_category="Countries"
+            str_category = "Countries"
             break
         elif category == '2':
-            str_category=" Animals"
+            str_category = " Animals"
             break
         elif category == '3':
-            str_category="Foods"
+            str_category = "Foods"
             break
         elif category == '4':
-            str_category="Objects"
+            str_category = "Objects"
             break
         else:
             typing("please enter a number between 1 to 4", "red", False, FAST)
@@ -172,67 +171,57 @@ def category_picker():
 
 
 def guess(random_word, category):
-    stage=int(0)
-    used_letters=list()
+    stage = int(0)
+    used_letters = list()
     random_word_letters = list()
-    guessed_word=["-"]* len(random_word)
-    
+    guessed_word = ["-"] * len(random_word)
     # Unpacking the random_word in random_word_letters
     for letter in random_word:
         # With .lower() we are sure all letters are lowercase
         random_word_letters.append(letter.lower())
-    
     # Get a letter from user
     while True:
-        #  User Interface in the game (UI)
-
-        cprint( f"Category: {category}", "blue")
+        # User Interface in the game (UI)
+        cprint(f"Category: {category}", "blue")
         print("\n")
-        cprint( f"Used letters: {list_to_str(used_letters)}", "blue")
+        cprint(f"Used letters: {list_to_str(used_letters)}", "blue")
         typing(list_to_str(guessed_word), "yellow", False, 0)
 
-        cprint( hangman(stage), "magenta")
-        
-        if stage > 6 :
-            typing(f"You lost! The word is ", "red", True, SLOW)
+        cprint(hangman(stage), "magenta")
+        if stage > 6:
+            typing("You lost! The word is ", "red", True, SLOW)
             # Special speed for showing the random_word
             typing(f"{random_word.capitalize()}", "green", True, SUPPERSLOW)
             print("\n")
             break
         if "-" not in guessed_word:
-            typing(f"You won! The word is ", "blue", True, SLOW)
+            typing("You won! The word is ", "blue", True, SLOW)
             typing(f"{random_word.capitalize()}", "green", True, SUPPERSLOW)
             print("\n")
             break
 
-        input_letter= input(typing("\n Please insert a letter", "yellow",True, SLOW))
+        input_letter = input(typing("\n Please insert a letter", "yellow", True, SLOW))
 
         # check if more than one character inserted
-        if len(input_letter)>1:
+        if len(input_letter) > 1:
             typing("Just one letter per time. Try again!", "red", False, FAST)
         else:
             # check if character is alphabatic or not
             if not input_letter.isalpha():
                 typing("Just letters are valid. Try again!", "red", False, FAST)
             else:
-                """
-                We are sure input_letter is letter,so we can use .lower() 
-                method to convert it to lowercase
-                """
-                input_letter=input_letter.lower()
+                input_letter = input_letter.lower()
                 if input_letter in used_letters:
                     cprint(f" {input_letter.upper()} is alredy used ", "red")
                     print("\n")
-                # If the letter is in the random_word_letters 
                 elif input_letter in random_word_letters:
                     cprint(f" {input_letter.upper()} is in the word ", "green")
                     print("\n")
                     used_letters.append(input_letter)
                     # Updating the guessed_word
                     for i in range(len(random_word_letters)):
-                        if random_word_letters[i]==input_letter:
-                            guessed_word[i]=input_letter
-                            
+                        if random_word_letters[i] == input_letter:
+                            guessed_word[i] = input_letter                        
                 # If the letter is NOT in the random_word
                 elif input_letter not in random_word_letters:
                     cprint(f" {input_letter.upper()} is NOT in the word ", "magenta")
@@ -242,20 +231,20 @@ def guess(random_word, category):
 
 
 def list_to_str(li):
-    st=""
+    st = ""
     for l in li:
-        st +=  " " + l + " "
+        st += " " + l + " "
     return st.upper() 
 
 
-def typing(str,color,inline=False,speed=0):
+def typing(str, color, inline=False, speed=0):
     words = str
 
     if not inline:
         print("\n")
     for char in words:
         time.sleep(speed)
-        cprint(char,color)
+        cprint(char, color)
 
     if not inline:
         print("\n")
