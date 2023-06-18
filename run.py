@@ -1,3 +1,12 @@
+"""
+This module provides functionality related to randomization.
+
+It imports and utilizes the 'random' module for generating random numbers
+and making random selections.
+
+Module contents:
+- random: The 'random' module for random number generation and selection.
+"""
 import random
 import time
 from graph import hangman
