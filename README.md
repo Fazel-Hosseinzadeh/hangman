@@ -80,6 +80,8 @@ All the words used in this game are categorized into four categories: Countries,
             At the end of the game, the player will be notified of the outcome (win or loss) and shown the complete secret word.
             ![Won](documentation/won.png)
             ![Lost](documentation/lost.png)
+- ### Future Features
+        - In order to cater to a wider audience, the Hangman game can be enhanced with multi-language support. This feature allows players to enjoy the game in languages other than English.
         
 
 
