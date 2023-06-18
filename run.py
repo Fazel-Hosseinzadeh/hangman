@@ -171,6 +171,16 @@ Returns:
 
 
 def menu(user_name):
+    """
+    Display the menu options and handle user input.
+
+    Args:
+        user_name (str): The name of the user.
+
+    Returns:
+        None
+
+    """     
     while True:
         cprint(menu_text, "cyan")
         # Giving space to input
