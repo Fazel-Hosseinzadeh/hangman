@@ -17,7 +17,6 @@ The game continues until either the entire word is guessed correctly or the hang
 All the words used in this game are categorized into four categories: Countries, Animals, Foods, and Objects.
 
 ## User Experience (UX)
-
 - ### UX
 
   - #### As a User, I should to be able to:
@@ -35,7 +34,7 @@ All the words used in this game are categorized into four categories: Countries,
 - ### Existing Features
 
   - #### 1. Welcome Message and User Name Prompt
-          - Upon launching the Hangman Game, players are greeted with a warm welcome message. They are invited to enter their name, which adds a personal touch to the gameplay experience. Here's an example of the welcome message and name prompt.
+    - Upon launching the Hangman Game, players are greeted with a warm welcome message. They are invited to enter their name, which adds a personal touch to the gameplay experience. Here's an example of the welcome message and name prompt.
     ![Welcome](documentation/welcome.png)
   - #### 2.User Age Prompt
     - After the player enters their name, the Hangman Game prompts them to enter their age. This feature ensures that the game is played by an appropriate age group. Players who are 6 years old or older are eligible to play the game, while those below 6 years old are considered ineligible.
