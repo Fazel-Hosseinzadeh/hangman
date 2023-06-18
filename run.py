@@ -196,10 +196,10 @@ def menu(user_name):
             play(user_name)
         elif choose == '3':
             while True:
-                quit = input(typing((
+                exit_game_requested = input(typing((
                     "Press Y to exit, or any other key to continue."
                     ), "blue", False, FAST))
-                if quit.lower() == 'y':
+                if exit_game_requested.lower() == 'y':
                     exit_game(user_name)
                 else:
                     break
