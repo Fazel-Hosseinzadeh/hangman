@@ -142,3 +142,11 @@ Follow the steps below to deploy from your Gitpod workspace:
   9. Push to both GitHub and Heroku
   10. command: git push origin main
   11. command: git push heroku main
+
+## Credits
+
+- [Am I Responsive:](http://ami.responsivedesign.is) Checking the responsive.
+- [Hangman Grphical and Logo:](https://ascii.co.uk/art/hangman) Inspiration for creating A Simple Hangman Game in Python.
+- [Stackoverflow:](https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal) How do I print colored text to the terminal.
+- [Invent with python:](https://www.kaggle.com/general/273188)  Add Colour to Text in Python.
+
