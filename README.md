@@ -89,7 +89,7 @@ All the words used in this game are categorized into four categories: Countries,
     ![Lost](documentation/lost.png)
 
 - ### Future Features
-      - In order to cater to a wider audience, the Hangman game can be enhanced with multi-language support. This feature allows players to enjoy the game in languages other than English.
+  - In order to cater to a wider audience, the Hangman game can be enhanced with multi-language support. This feature allows players to enjoy the game in languages other than English.
 
 ## Design
 
