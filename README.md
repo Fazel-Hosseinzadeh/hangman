@@ -20,13 +20,13 @@ All the words used in this game are categorized into four categories: Countries,
 - ### UX
 
    #### As a User, I should to be able to:
-   1. Acquire a clear comprehension of how to navigate the game and start playing.
-   2. Conveniently obtain comprehensive guidelines for gameplay
-   3. Understand the necessary user input and receive suitable error messages to maintain game stability.
-   4. Track the number of incorrect guesses until the game reaches its conclusion.
-   5. Uncover the secret word if the user fails to guess it within the allotted attempts.
-   6. Seamlessly proceed with the game without the requirement to reenter initial inputs.
-   7. Delight in an enjoyable and fully operational gaming experience.
+      1. Acquire a clear comprehension of how to navigate the game and start playing.
+      2. Conveniently obtain comprehensive guidelines for gameplay
+      3. Understand the necessary user input and receive suitable error messages to maintain game stability.
+      4. Track the number of incorrect guesses until the game reaches its conclusion.
+      5. Uncover the secret word if the user fails to guess it within the allotted attempts.
+      6. Seamlessly proceed with the game without the requirement to reenter initial inputs.
+      7. Delight in an enjoyable and fully operational gaming experience.
 
 ## Features
 
